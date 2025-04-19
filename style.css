@@ -1,39 +1,20 @@
+
 body {
-  font-family: Arial, sans-serif;
-  padding: 20px;
-  text-align: center;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+header {
+    background: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
 }
 nav a {
-  text-decoration: none;
-  font-weight: bold;
-  color: #fff;
-  background: #003366;
-  padding: 10px 20px;
-  border-radius: 6px;
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
 }
-form.formulir {
-  max-width: 500px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-top: 20px;
-}
-form input, form textarea {
-  padding: 10px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  font-size: 1rem;
-}
-form button {
-  background-color: #003366;
-  color: white;
-  padding: 10px;
-  border: none;
-  border-radius: 6px;
-  font-weight: bold;
-  cursor: pointer;
-}
-form button:hover {
-  background-color: #002050;
+nav a:hover {
+    text-decoration: underline;
 }
