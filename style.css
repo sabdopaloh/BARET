@@ -1,33 +1,40 @@
 body {
   font-family: Arial, sans-serif;
-  text-align: center;
   padding: 20px;
-}
-nav a {
-  text-decoration: none;
-  font-weight: bold;
-  color: #fff;
-  background: #003366;
-  padding: 10px 20px;
-  border-radius: 6px;
-}
-table.jadwal {
-  margin: 20px auto;
-  border-collapse: collapse;
-  width: 90%;
-  max-width: 800px;
-  background: #fff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-table.jadwal th, table.jadwal td {
-  border: 1px solid #ccc;
-  padding: 12px;
   text-align: center;
 }
-table.jadwal th {
+nav.nav-responsive {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+nav.nav-responsive .btn {
+  text-decoration: none;
+  padding: 10px 20px;
   background-color: #003366;
   color: white;
+  border-radius: 6px;
+  font-weight: bold;
 }
-table.jadwal tr:nth-child(even) {
-  background-color: #f2f2f2;
+.hero-img {
+  max-width: 90%;
+  height: auto;
+  margin-top: 20px;
+  border-radius: 12px;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  nav.nav-responsive {
+    flex-direction: column;
+    gap: 10px;
+  }
+  h1 {
+    font-size: 1.4rem;
+  }
+  .hero-img {
+    width: 100%;
+  }
 }
