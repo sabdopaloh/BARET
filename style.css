@@ -1,7 +1,7 @@
 body {
   font-family: Arial, sans-serif;
-  padding: 20px;
   text-align: center;
+  padding: 20px;
 }
 nav a {
   text-decoration: none;
@@ -11,29 +11,21 @@ nav a {
   padding: 10px 20px;
   border-radius: 6px;
 }
-form.formulir {
-  max-width: 500px;
+.testimoni-box {
+  max-width: 600px;
   margin: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-top: 20px;
+  padding: 20px;
+  font-style: italic;
+  background: #f0f0f0;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
-form input, form textarea {
-  padding: 10px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  font-size: 1rem;
+.testimoni-box blockquote {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
 }
-form button {
-  background-color: #003366;
-  color: white;
-  padding: 10px;
-  border: none;
-  border-radius: 6px;
+.testimoni-box p {
+  text-align: right;
   font-weight: bold;
-  cursor: pointer;
-}
-form button:hover {
-  background-color: #002050;
+  margin: 0;
 }

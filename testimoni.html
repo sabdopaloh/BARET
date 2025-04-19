@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Testimoni Anggota BARET</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <a href="index.html" class="btn">Beranda</a>
+  </nav>
+
+  <h1>Testimoni Anggota</h1>
+
+  <div class="testimoni-box">
+    <blockquote id="testimoni-text">“Bergabung di BARET bikin hidupku lebih bermakna.”</blockquote>
+    <p id="testimoni-author">– Rina, Anggota BARET</p>
+  </div>
+
+  <script>
+    const testimonis = [
+      { text: "“Bergabung di BARET bikin hidupku lebih bermakna.”", author: "– Rina, Anggota BARET" },
+      { text: "“BARET tempat belajar, berkarya, dan berbagi.”", author: "– Dimas, Divisi Media" },
+      { text: "“Lingkungannya positif dan menyenangkan banget.”", author: "– Ayu, Ketua Panitia Ramadan" }
+    ];
+
+    let i = 0;
+    setInterval(() => {
+      i = (i + 1) % testimonis.length;
+      document.getElementById("testimoni-text").textContent = testimonis[i].text;
+      document.getElementById("testimoni-author").textContent = testimonis[i].author;
+    }, 4000);
+  </script>
+</body>
+</html>
