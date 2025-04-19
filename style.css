@@ -1,31 +1,38 @@
-body {
+body, html {
+  margin: 0;
   font-family: Arial, sans-serif;
-  text-align: center;
-  padding: 20px;
+  scroll-behavior: smooth;
 }
+
 nav a {
+  display: inline-block;
   text-decoration: none;
-  font-weight: bold;
-  color: #fff;
   background: #003366;
+  color: white;
   padding: 10px 20px;
   border-radius: 6px;
-}
-.testimoni-box {
-  max-width: 600px;
-  margin: auto;
-  padding: 20px;
-  font-style: italic;
-  background: #f0f0f0;
-  border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-}
-.testimoni-box blockquote {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-}
-.testimoni-box p {
-  text-align: right;
+  margin: 20px;
   font-weight: bold;
-  margin: 0;
+}
+
+.parallax {
+  background-image: url('foto_baret.jpg');
+  min-height: 400px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.konten {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: white;
+}
+
+footer {
+  background: #003366;
+  color: white;
+  padding: 20px;
+  text-align: center;
 }
