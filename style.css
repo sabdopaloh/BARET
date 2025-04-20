@@ -1,89 +1,62 @@
 
 body {
   margin: 0;
-  padding: 0;
-  background-color: #000;
   font-family: Arial, sans-serif;
+  background: black;
   color: white;
   text-align: center;
 }
-
+.container {
+  padding: 40px 20px;
+}
 .logo {
-  margin-top: 80px;
-  max-width: 200px;
+  width: 120px;
+  margin-bottom: 20px;
 }
-
 .slogan {
-  font-size: 1.5em;
-  margin: 20px 0;
-  color: #ff007f;
-  text-shadow: 0 0 10px #ff007f;
+  font-size: 22px;
+  font-weight: bold;
+  color: #ff0040;
+  text-shadow: 0 0 15px #ff0040;
+  margin-bottom: 30px;
 }
-
 .menu {
-  margin: 30px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
 }
-
 .btn {
-  display: block;
-  margin: 10px auto;
-  padding: 15px 25px;
-  border-radius: 15px;
-  background: linear-gradient(145deg, #4b0082, #8a2be2);
-  border: 2px solid #a855f7;
-  color: #ffcc00;
-  font-size: 1.1em;
+  background: linear-gradient(145deg, #44008b, #220044);
+  border: 2px solid #a259ff;
+  color: gold;
+  padding: 12px 20px;
   text-decoration: none;
-  width: 200px;
-  box-shadow: 0 0 10px #a855f7;
+  border-radius: 12px;
+  box-shadow: 0 0 8px #a259ff;
+  font-weight: bold;
 }
-
-.join-button {
-  background-color: yellow;
+.icon {
+  margin-right: 5px;
+}
+.actions {
+  margin-top: 30px;
+}
+.join-btn {
+  background: yellow;
+  padding: 12px 20px;
+  border-radius: 25px;
+  font-weight: bold;
+  text-decoration: none;
   color: black;
-  padding: 15px 30px;
-  border-radius: 30px;
-  font-weight: bold;
-  font-size: 1.2em;
-  text-decoration: none;
+  margin-bottom: 10px;
   display: inline-block;
-  margin: 20px auto;
-  box-shadow: 0 0 20px yellow;
 }
-
-.group-photo {
-  max-width: 90%;
-  border-radius: 20px;
-  margin-top: 20px;
-  box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
-}
-
-.marquee-top {
-  background-color: #000;
-  color: #fff200;
-  font-size: 16px;
-  padding: 10px 0;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 9999;
-  font-weight: bold;
-  text-align: center;
-  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.2);
-}
-
-.glow-text {
-  text-shadow:
-    0 0 5px #fff200,
-    0 0 10px #fff200,
-    0 0 20px #ff00cc,
-    0 0 30px #ff00cc;
-  animation: shimmer 2s infinite;
-}
-
-@keyframes shimmer {
-  0% { text-shadow: 0 0 5px #fff200, 0 0 10px #fff200, 0 0 20px #ff00cc, 0 0 30px #ff00cc; }
-  50% { text-shadow: 0 0 10px #fff200, 0 0 20px #fff200, 0 0 30px #ff00cc, 0 0 40px #ff00cc; }
-  100% { text-shadow: 0 0 5px #fff200, 0 0 10px #fff200, 0 0 20px #ff00cc, 0 0 30px #ff00cc; }
+.foto-baret {
+  display: block;
+  margin: 20px auto 0;
+  width: 180px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px yellow;
 }
