@@ -5,13 +5,13 @@ body {
   color: #fff;
   font-family: 'Segoe UI', sans-serif;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 100vh;
 }
 
 .container {
   text-align: center;
+  margin-top: 60px;
 }
 
 .logo {
@@ -76,6 +76,7 @@ body {
   50% { top: 0%; left: 0%; }
   100% { top: 100%; left: 100%; }
 }
+
 .cta-button {
   margin-top: 30px;
   background-color: gold;
@@ -102,4 +103,17 @@ body {
   height: auto;
   border-radius: 12px;
   box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+}
+
+.popup-marquee {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: linear-gradient(90deg, gold, purple, gold);
+  color: black;
+  font-weight: bold;
+  padding: 10px 0;
+  z-index: 9999;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(255, 215, 0, 0.3);
 }
