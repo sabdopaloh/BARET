@@ -1,62 +1,80 @@
 
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: black;
-  color: white;
-  text-align: center;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
 }
-.container {
-  padding: 40px 20px;
+
+.top-bar {
+    background: linear-gradient(90deg, yellow, purple);
+    color: black;
+    padding: 5px;
+    font-weight: bold;
 }
+
 .logo {
-  width: 120px;
-  margin-bottom: 20px;
+    margin-top: 20px;
+    max-width: 300px;
+    width: 80%;
 }
+
 .slogan {
-  font-size: 22px;
-  font-weight: bold;
-  color: #ff0040;
-  text-shadow: 0 0 15px #ff0040;
-  margin-bottom: 30px;
+    color: #ff007f;
+    text-shadow: 0 0 10px #ff007f;
+    font-size: 20px;
+    margin: 20px auto;
+    max-width: 90%;
 }
+
 .menu {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px;
 }
+
 .btn {
-  background: linear-gradient(145deg, #44008b, #220044);
-  border: 2px solid #a259ff;
-  color: gold;
-  padding: 12px 20px;
-  text-decoration: none;
-  border-radius: 12px;
-  box-shadow: 0 0 8px #a259ff;
-  font-weight: bold;
+    background: linear-gradient(45deg, #3f0071, #9f00c5);
+    border: 2px solid #c084fc;
+    padding: 15px 25px;
+    border-radius: 15px;
+    color: gold;
+    text-decoration: none;
+    font-size: 18px;
+    box-shadow: 0 0 15px #c084fc;
+    transition: transform 0.2s;
 }
-.icon {
-  margin-right: 5px;
+
+.btn i {
+    margin-right: 8px;
 }
-.actions {
-  margin-top: 30px;
+
+.btn:hover {
+    transform: scale(1.05);
 }
+
+.cta {
+    margin-top: 30px;
+}
+
 .join-btn {
-  background: yellow;
-  padding: 12px 20px;
-  border-radius: 25px;
-  font-weight: bold;
-  text-decoration: none;
-  color: black;
-  margin-bottom: 10px;
-  display: inline-block;
+    background-color: #FFD700;
+    padding: 15px 30px;
+    border-radius: 30px;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    box-shadow: 0 0 10px yellow;
 }
-.foto-baret {
-  display: block;
-  margin: 20px auto 0;
-  width: 180px;
-  border-radius: 12px;
-  box-shadow: 0 0 15px yellow;
+
+.group-photo {
+    margin-top: 30px;
+    max-width: 90%;
+    border-radius: 20px;
+    box-shadow: 0 0 15px #fff;
+    margin-bottom: 50px;
 }
