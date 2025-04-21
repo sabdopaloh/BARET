@@ -1,32 +1,91 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Daftar - BARET</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" type="image/png" href="Untitled-1.gif"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Formulir Pendaftaran BARET</title>
+  <link rel="icon" href="Untitled-1.gif" type="image/gif">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: black;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+    form {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px #0ff;
+      width: 90%;
+      max-width: 400px;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: none;
+      border-radius: 5px;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 20px;
+      background: #0ff;
+      color: black;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      box-shadow: 0 0 5px #0ff, 0 0 15px #0ff, 0 0 25px #0ff;
+      transition: all 0.3s ease;
+    }
+    button:hover {
+      background: white;
+      box-shadow: 0 0 10px #fff, 0 0 20px #0ff, 0 0 30px #0ff;
+    }
+    #hasil {
+      margin-top: 15px;
+      text-align: center;
+      font-weight: bold;
+      color: #0ff;
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Formulir Pendaftaran BARET</h1>
-    <form id="daftarForm">
-      <label for="nama">Nama Lengkap:</label>
-      <input type="text" id="nama" name="nama" required />
+  <h1>Formulir Pendaftaran<br>BARET</h1>
+  <form id="daftarForm">
+    <label for="nama">Nama Lengkap:</label>
+    <input type="text" id="nama" name="nama" required>
 
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required />
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
 
-      <label for="tanggal">Tanggal Daftar:</label>
-      <input type="date" id="tanggal" name="tanggal" required />
+    <label for="tanggal">Tanggal Daftar:</label>
+    <input type="date" id="tanggal" name="tanggal" required>
 
-      <label for="password">Kata Sandi:</label>
-      <input type="password" id="password" name="password" required />
+    <label for="password">Kata Sandi:</label>
+    <input type="password" id="password" name="password" required>
 
-      <button type="submit">Daftar</button>
-    </form>
+    <button type="submit">Daftar</button>
     <p id="hasil"></p>
-  </div>
+  </form>
 
   <script>
     document.getElementById('daftarForm').addEventListener('submit', function(e) {
