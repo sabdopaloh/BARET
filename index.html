@@ -4,64 +4,28 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>BARET - Barisan Remaja Tempel</title>
-  <link rel="stylesheet" href="style.css"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-  <style>
-    #running-popup {
-      position: absolute;
-      top: 0;
-      width: 100%;
-      background-color: #111;
-      padding: 10px 0;
-      z-index: 9999;
-      overflow: hidden;
-      box-shadow: 0 0 10px #25D366;
-    }
-
-    .marquee-content {
-      display: inline-block;
-      white-space: nowrap;
-      animation: marquee 15s linear infinite;
-      color: white;
-      font-weight: bold;
-      font-size: 16px;
-      padding-left: 100%;
-    }
-
-    .marquee-content span {
-      margin-left: 30px;
-      color: #25D366;
-      cursor: pointer;
-    }
-
-    @keyframes marquee {
-      0%   { transform: translateX(0); }
-      100% { transform: translateX(-100%); }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div id="running-popup">
-    <div class="marquee-content">
-      Selamat datang di Website Resmi BARET - Barisan Remaja Tempel. BERIMAN, BERSAHAJA, & BERMASYARAKAT!
-      <span onclick="document.getElementById('running-popup').style.display='none'">[Tutup]</span>
-    </div>
-  </div>
+  <header>
+    <img src="Untitled-1.gif" alt="Logo BARET" class="logo" />
+    <h1>BARISAN REMAJA TEMPEL</h1>
+    <p class="slogan">BERIMAN, BERSAHAJA, & BERMASYARAKAT</p>
+  </header>
 
-  <div class="container" style="position: relative; margin-top: 40px;">
-    <img src="Untitled-1.gif" alt="Logo BARET" class="logo"/>
-    <h1 class="slogan">BERIMAN, BERSAHAJA, & BERMASYARAKAT</h1>
-    
-    <div class="menu">
-      <a href="tentang.html" class="glow-btn"><i class="fas fa-info-circle"></i> Tentang</a>
-      <a href="kegiatan.html" class="glow-btn"><i class="fas fa-calendar-alt"></i> Kegiatan</a>
-      <a href="struktur.html" class="glow-btn"><i class="fas fa-users"></i> Struktur</a>
-      <a href="kontak.html" class="glow-btn"><i class="fab fa-whatsapp"></i> Kontak</a>
-      <a href="login.html" class="glow-btn"><i class="fas fa-sign-in-alt"></i> Login</a>
-      <a href="daftar.html" class="glow-btn"><i class="fas fa-user-plus"></i> Daftar</a>
+  <main>
+    <img src="foto_baret.jpg" alt="Foto BARET" class="foto-utama" />
+    <div class="tombol-container">
+      <a href="tentang.html" class="tombol">Tentang</a>
+      <a href="kegiatan.html" class="tombol">Kegiatan</a>
+      <a href="struktur.html" class="tombol">Struktur</a>
+      <a href="kontak.html" class="tombol">Kontak</a>
+      <a href="daftar.html" class="tombol">Daftar</a> <!-- Ini yang baru -->
     </div>
+  </main>
 
-    <img src="foto_baret.jpg" alt="Foto BARET" class="group-photo"/>
-  </div>
+  <footer>
+    <p>&copy; 2025 BARET. All rights reserved.</p>
+  </footer>
 </body>
 </html>
