@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Formulir Pendaftaran BARET</title>
-  <link rel="icon" href="Untitled-1.gif" type="image/gif">
   <style>
     body {
       margin: 0;
@@ -73,16 +72,12 @@
   <form id="daftarForm">
     <label for="nama">Nama Lengkap:</label>
     <input type="text" id="nama" name="nama" required>
-
     <label for="email">Email:</label>
     <input type="email" id="email" name="email" required>
-
     <label for="tanggal">Tanggal Daftar:</label>
     <input type="date" id="tanggal" name="tanggal" required>
-
     <label for="password">Kata Sandi:</label>
     <input type="password" id="password" name="password" required>
-
     <button type="submit">Daftar</button>
     <p id="hasil"></p>
   </form>
@@ -92,7 +87,7 @@
       e.preventDefault();
       const form = e.target;
       const data = new FormData(form);
-      const url = 'https://script.google.com/macros/s/AKfycbyMgTKz8baFFrruZYAtZ2NUXyBfCcsqyxe7sHY-XYLZeptQ73iYCGVf8CTNxnhYBs_f/exec';
+      const url = 'https://script.google.com/macros/s/AKfycbxhVGvW8nSHg4QDOpQu1DPX6I4e01oV_Tw9yMhzQqw/exec';
 
       fetch(url, {
         method: 'POST',
