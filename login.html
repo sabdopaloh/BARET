@@ -1,45 +1,38 @@
+
 <!DOCTYPE html>
-<html lang="id">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Login BARET</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Login Anggota BARET</title>
+  <meta charset="UTF-8">
 </head>
 <body>
-  <h1>Login Anggota BARET</h1>
+  <h2>Login Anggota BARET</h2>
   <form id="loginForm">
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required />
-
-    <label for="password">Kata Sandi:</label>
-    <input type="password" id="password" name="password" required />
-
+    Email: <input type="email" name="email" required><br>
+    Kata Sandi: <input type="password" name="password" required><br>
     <button type="submit">Login</button>
-    <p id="pesan"></p>
   </form>
+  <p id="hasilLogin"></p>
 
   <script>
-    document.getElementById("loginForm").addEventListener("submit", function (e) {
+    document.getElementById("loginForm").addEventListener("submit", function(e) {
       e.preventDefault();
-      const data = new FormData(e.target);
-
+      const formData = new FormData(e.target);
       fetch("https://script.google.com/macros/s/AKfycbx9Fg4T7W035WMTpmhrFGUPsrWm9w5JOdVHlack5g1EyCaEn2-8miegPac6YNC9VWb9/exec", {
         method: "POST",
-        body: data,
+        body: formData
       })
-        .then((res) => res.text())
-        .then((txt) => {
-          if (txt === "login_berhasil") {
-            window.location.href = "dashboard.html";
-          } else {
-            document.getElementById("pesan").textContent = "Email atau kata sandi salah.";
-          }
-        })
-        .catch((err) => {
-          document.getElementById("pesan").textContent = "Terjadi kesalahan.";
-          console.error(err);
-        });
+      .then(res => res.text())
+      .then(data => {
+        if (data === "login_berhasil") {
+          window.location.href = "dashboard.html";
+        } else {
+          document.getElementById("hasilLogin").innerText = "Login gagal";
+        }
+      })
+      .catch(err => {
+        document.getElementById("hasilLogin").innerText = "Terjadi kesalahan.";
+      });
     });
   </script>
 </body>

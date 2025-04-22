@@ -1,50 +1,35 @@
+
 <!DOCTYPE html>
-<html lang="id">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Formulir Pendaftaran BARET</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
 </head>
 <body>
-  <h1>Formulir Pendaftaran BARET</h1>
+  <h2>Formulir Pendaftaran BARET</h2>
   <form id="daftarForm">
-    <label for="nama">Nama Lengkap:</label>
-    <input type="text" id="nama" name="nama" required>
-
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required>
-
-    <label for="tanggal">Tanggal Daftar:</label>
-    <input type="date" id="tanggal" name="tanggal" required>
-
-    <label for="password">Kata Sandi:</label>
-    <input type="password" id="password" name="password" required>
-
+    Nama Lengkap: <input type="text" name="nama" required><br>
+    Email: <input type="email" name="email" required><br>
+    Tanggal Daftar: <input type="date" name="tanggal" required><br>
+    Kata Sandi: <input type="password" name="password" required><br>
     <button type="submit">Daftar</button>
-    <p id="hasil"></p>
   </form>
+  <p id="hasil"></p>
 
   <script>
-    document.getElementById('daftarForm').addEventListener('submit', function(e) {
+    document.getElementById("daftarForm").addEventListener("submit", function(e) {
       e.preventDefault();
-      const data = new FormData(e.target);
-
-      fetch('https://script.google.com/macros/s/AKfycbx9Fg4T7W035WMTpmhrFGUPsrWm9w5JOdVHlack5g1EyCaEn2-8miegPac6YNC9VWb9/exec', {
-        method: 'POST',
-        body: data
+      const formData = new FormData(e.target);
+      fetch("https://script.google.com/macros/s/AKfycbx9Fg4T7W035WMTpmhrFGUPsrWm9w5JOdVHlack5g1EyCaEn2-8miegPac6YNC9VWb9/exec", {
+        method: "POST",
+        body: formData
       })
       .then(res => res.text())
-      .then(txt => {
-        if (txt === "pendaftaran_berhasil") {
-          window.location.href = 'sukses.html';
-        } else {
-          document.getElementById('hasil').textContent = txt;
-        }
+      .then(data => {
+        document.getElementById("hasil").innerText = data;
       })
       .catch(err => {
-        document.getElementById('hasil').textContent = "Terjadi kesalahan saat mengirim data.";
-        console.error(err);
+        document.getElementById("hasil").innerText = "Terjadi kesalahan saat mengirim data.";
       });
     });
   </script>
