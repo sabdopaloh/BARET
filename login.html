@@ -1,47 +1,45 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Login BARET</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h2>Login Anggota BARET</h2>
+  <h1>Login Anggota BARET</h1>
   <form id="loginForm">
-    <input type="email" name="email" placeholder="Email" required />
-    <input type="password" name="password" placeholder="Kata Sandi" required />
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required />
+
+    <label for="password">Kata Sandi:</label>
+    <input type="password" id="password" name="password" required />
+
     <button type="submit">Login</button>
-    <p id="hasil"></p>
+    <p id="pesan"></p>
   </form>
 
   <script>
-    const form = document.getElementById('loginForm');
-    const hasil = document.getElementById('hasil');
-    form.addEventListener('submit', function(e) {
+    document.getElementById("loginForm").addEventListener("submit", function (e) {
       e.preventDefault();
-      const data = new FormData(form);
-      const url = 'https://script.google.com/macros/s/AKfycbyMgTKz8baFFrruZYAtZ2NUXyBfCcsqyxe7sHY-XYLZeptQ73iYCGVf8CTNxnhYBs_f/exec';
+      const data = new FormData(e.target);
 
-      fetch(url, {
-        method: 'POST',
-        body: data
+      fetch("https://script.google.com/macros/s/AKfycbyMgTKz8baFFrruZYAtZ2NUXyBfCcsqyxe7sHY-XYLZeptQ73iYCGVf8CTNxnhYBs_f/exec", {
+        method: "POST",
+        body: data,
       })
-      .then(res => res.text())
-      .then(text => {
-        if (text === "sukses") {
-          hasil.textContent = "Login berhasil! Selamat datang.";
-          hasil.style.color = "#0f0";
-        } else {
-          hasil.textContent = "Login gagal! Periksa kembali email dan kata sandi.";
-          hasil.style.color = "#f00";
-        }
-      })
-      .catch(err => {
-        hasil.textContent = "Terjadi kesalahan.";
-        hasil.style.color = "#f00";
-        console.error(err);
-      });
+        .then((res) => res.text())
+        .then((txt) => {
+          if (txt === "login_berhasil") {
+            window.location.href = "dashboard.html";
+          } else {
+            document.getElementById("pesan").textContent = "Email atau kata sandi salah.";
+          }
+        })
+        .catch((err) => {
+          document.getElementById("pesan").textContent = "Terjadi kesalahan.";
+          console.error(err);
+        });
     });
   </script>
 </body>

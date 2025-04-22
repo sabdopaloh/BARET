@@ -1,69 +1,29 @@
-
 body {
-  background: black;
-  color: white;
-  font-family: 'Segoe UI', sans-serif;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-}
-.logo {
-  width: 100px;
-  margin-top: 20px;
-}
-.foto-utama {
-  width: 80%;
-  max-width: 500px;
+  font-family: Arial, sans-serif;
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
   border-radius: 10px;
-  margin: 20px 0;
 }
-.slogan {
-  color: #f33;
-  font-weight: bold;
-  font-size: 1.2em;
+label {
+  display: block;
+  margin-top: 15px;
 }
-.tombol-container {
-  margin-top: 20px;
-}
-.tombol {
-  background: #0ff;
-  color: black;
-  text-decoration: none;
-  padding: 10px 20px;
-  margin: 5px;
-  display: inline-block;
-  border-radius: 8px;
-  font-weight: bold;
-  box-shadow: 0 0 10px #0ff;
-  transition: all 0.3s ease;
-}
-.tombol:hover {
-  background: white;
-  box-shadow: 0 0 15px #fff, 0 0 20px #0ff;
-}
-form {
-  background: rgba(255, 255, 255, 0.05);
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 0 15px #0ff;
-  width: 90%;
-  max-width: 400px;
-  margin: auto;
-}
-input, button {
+input {
   width: 100%;
-  padding: 10px;
-  margin-top: 10px;
-  border-radius: 5px;
-  border: none;
+  padding: 8px;
+  margin-top: 5px;
 }
 button {
-  background: #0ff;
-  font-weight: bold;
-  cursor: pointer;
+  margin-top: 20px;
+  padding: 10px 15px;
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 5px;
 }
 #hasil {
-  margin-top: 15px;
-  text-align: center;
+  margin-top: 20px;
   font-weight: bold;
 }
