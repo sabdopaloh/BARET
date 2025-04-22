@@ -7,29 +7,24 @@ body {
   margin: 0;
   padding: 0;
 }
-
 .logo {
   width: 100px;
   margin-top: 20px;
 }
-
 .foto-utama {
   width: 80%;
   max-width: 500px;
   border-radius: 10px;
   margin: 20px 0;
 }
-
 .slogan {
   color: #f33;
   font-weight: bold;
   font-size: 1.2em;
 }
-
 .tombol-container {
   margin-top: 20px;
 }
-
 .tombol {
   background: #0ff;
   color: black;
@@ -42,8 +37,33 @@ body {
   box-shadow: 0 0 10px #0ff;
   transition: all 0.3s ease;
 }
-
 .tombol:hover {
   background: white;
   box-shadow: 0 0 15px #fff, 0 0 20px #0ff;
+}
+form {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px #0ff;
+  width: 90%;
+  max-width: 400px;
+  margin: auto;
+}
+input, button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: none;
+}
+button {
+  background: #0ff;
+  font-weight: bold;
+  cursor: pointer;
+}
+#hasil {
+  margin-top: 15px;
+  text-align: center;
+  font-weight: bold;
 }
