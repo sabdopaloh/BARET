@@ -26,7 +26,13 @@
       })
       .then(res => res.text())
       .then(data => {
-        document.getElementById("hasil").innerText = data;
+        if (data === "pendaftaran_berhasil") {
+          document.getElementById("hasil").innerText = "Pendaftaran berhasil!";
+        } else if (data === "email_terdaftar") {
+          document.getElementById("hasil").innerText = "Email sudah terdaftar.";
+        } else {
+          document.getElementById("hasil").innerText = "Pendaftaran gagal: " + data;
+        }
       })
       .catch(err => {
         document.getElementById("hasil").innerText = "Terjadi kesalahan saat mengirim data.";
