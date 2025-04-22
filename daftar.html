@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Formulir Pendaftaran BARET</title>
+  <link rel="icon" href="Untitled-1.gif" type="image/gif">
   <style>
     body {
       margin: 0;
@@ -17,11 +18,6 @@
       justify-content: center;
       min-height: 100vh;
     }
-    h1 {
-      text-align: center;
-      margin-bottom: 10px;
-      text-transform: uppercase;
-    }
     form {
       background: rgba(255, 255, 255, 0.05);
       padding: 30px;
@@ -30,34 +26,21 @@
       width: 90%;
       max-width: 400px;
     }
-    label {
+    label, input, button {
       display: block;
-      margin-top: 15px;
-      font-weight: bold;
-    }
-    input {
       width: 100%;
+      margin-top: 15px;
+    }
+    input, button {
       padding: 10px;
-      margin-top: 5px;
-      border: none;
       border-radius: 5px;
+      border: none;
     }
     button {
-      width: 100%;
-      padding: 12px;
-      margin-top: 20px;
       background: #0ff;
       color: black;
       font-weight: bold;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      box-shadow: 0 0 5px #0ff, 0 0 15px #0ff, 0 0 25px #0ff;
-      transition: all 0.3s ease;
-    }
-    button:hover {
-      background: white;
-      box-shadow: 0 0 10px #fff, 0 0 20px #0ff, 0 0 30px #0ff;
+      box-shadow: 0 0 5px #0ff, 0 0 15px #0ff;
     }
     #hasil {
       margin-top: 15px;
@@ -68,39 +51,35 @@
   </style>
 </head>
 <body>
-  <h1>Formulir Pendaftaran<br>BARET</h1>
+  <h1>Formulir Pendaftaran BARET</h1>
   <form id="daftarForm">
-    <label for="nama">Nama Lengkap:</label>
-    <input type="text" id="nama" name="nama" required>
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required>
-    <label for="tanggal">Tanggal Daftar:</label>
-    <input type="date" id="tanggal" name="tanggal" required>
-    <label for="password">Kata Sandi:</label>
-    <input type="password" id="password" name="password" required>
+    <label>Nama Lengkap:</label>
+    <input type="text" name="nama" required>
+    <label>Email:</label>
+    <input type="email" name="email" required>
+    <label>Tanggal Daftar:</label>
+    <input type="date" name="tanggal" required>
+    <label>Kata Sandi:</label>
+    <input type="password" name="password" required>
     <button type="submit">Daftar</button>
     <p id="hasil"></p>
   </form>
-
   <script>
     document.getElementById('daftarForm').addEventListener('submit', function(e) {
       e.preventDefault();
-      const form = e.target;
-      const data = new FormData(form);
-      const url = 'https://script.google.com/macros/s/AKfycbxhVGvW8nSHg4QDOpQu1DPX6I4e01oV_Tw9yMhzQqw/exec';
-
-      fetch(url, {
+      const data = new FormData(e.target);
+      fetch('https://script.google.com/macros/s/AKfycbyMgTKz8baFFrruZYAtZ2NUXyBfCcsqyxe7sHY-XYLZeptQ73iYCGVf8CTNxnhYBs_f/exec', {
         method: 'POST',
         body: data
       })
-      .then(response => response.text())
-      .then(result => {
-        document.getElementById('hasil').textContent = result;
-        form.reset();
+      .then(res => res.text())
+      .then(txt => {
+        document.getElementById('hasil').textContent = txt;
+        e.target.reset();
       })
-      .catch(error => {
-        document.getElementById('hasil').textContent = "Terjadi kesalahan. Silakan coba lagi.";
-        console.error('Error!', error.message);
+      .catch(err => {
+        document.getElementById('hasil').textContent = "Terjadi kesalahan.";
+        console.error(err);
       });
     });
   </script>
