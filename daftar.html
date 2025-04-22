@@ -36,7 +36,7 @@
       })
       .then(res => res.text())
       .then(txt => {
-        if (txt.toLowerCase().includes("pendaftaran_berhasil")) {
+        if (txt === "pendaftaran_berhasil") {
           window.location.href = 'sukses.html';
         } else {
           document.getElementById('hasil').textContent = txt;
