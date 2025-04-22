@@ -29,17 +29,21 @@
     document.getElementById('daftarForm').addEventListener('submit', function(e) {
       e.preventDefault();
       const data = new FormData(e.target);
+
       fetch('https://script.google.com/macros/s/AKfycbyMgTKz8baFFrruZYAtZ2NUXyBfCcsqyxe7sHY-XYLZeptQ73iYCGVf8CTNxnhYBs_f/exec', {
         method: 'POST',
         body: data
       })
       .then(res => res.text())
       .then(txt => {
-        document.getElementById('hasil').textContent = txt;
-        e.target.reset();
+        if (txt.toLowerCase().includes("pendaftaran_berhasil")) {
+          window.location.href = 'sukses.html';
+        } else {
+          document.getElementById('hasil').textContent = txt;
+        }
       })
       .catch(err => {
-        document.getElementById('hasil').textContent = "Terjadi kesalahan.";
+        document.getElementById('hasil').textContent = "Terjadi kesalahan saat mengirim data.";
         console.error(err);
       });
     });

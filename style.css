@@ -23,7 +23,7 @@ button {
   border: none;
   border-radius: 5px;
 }
-#hasil {
+#hasil, #pesan {
   margin-top: 20px;
   font-weight: bold;
 }
