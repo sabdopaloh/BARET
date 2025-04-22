@@ -1,80 +1,49 @@
 
 body {
-  margin: 0;
-  background-color: black;
+  background: black;
   color: white;
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', sans-serif;
   text-align: center;
-}
-
-.container {
-  padding: 20px;
+  margin: 0;
+  padding: 0;
 }
 
 .logo {
-  width: 300px;
-  max-width: 80%;
-  margin-bottom: 20px;
+  width: 100px;
+  margin-top: 20px;
+}
+
+.foto-utama {
+  width: 80%;
+  max-width: 500px;
+  border-radius: 10px;
+  margin: 20px 0;
 }
 
 .slogan {
-  font-size: 24px;
+  color: #f33;
   font-weight: bold;
-  color: #ff0080;
-  text-shadow: 0 0 10px #ff0080, 0 0 20px #ff0080;
-  margin-bottom: 30px;
+  font-size: 1.2em;
 }
 
-.menu {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
-  margin-bottom: 30px;
+.tombol-container {
+  margin-top: 20px;
 }
 
-.glow-btn {
-  position: relative;
-  display: inline-block;
-  padding: 12px 25px;
-  color: gold;
-  background: #1a1a1a;
-  border: 2px solid #a855f7;
-  border-radius: 12px;
+.tombol {
+  background: #0ff;
+  color: black;
   text-decoration: none;
-  font-size: 18px;
-  box-shadow: 0 0 8px #a855f7;
-  transition: 0.3s ease;
+  padding: 10px 20px;
+  margin: 5px;
+  display: inline-block;
+  border-radius: 8px;
+  font-weight: bold;
+  box-shadow: 0 0 10px #0ff;
+  transition: all 0.3s ease;
 }
 
-.glow-btn i {
-  margin-right: 8px;
-}
-
-.glow-btn::before {
-  content: "";
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  border-radius: 12px;
-  background: linear-gradient(45deg, gold, purple, gold, purple);
-  z-index: -1;
-  filter: blur(5px);
-  animation: glow-cycle 3s linear infinite;
-}
-
-@keyframes glow-cycle {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-.group-photo {
-  width: 100%;
-  max-width: 500px;
-  border-radius: 20px;
-  box-shadow: 0 0 15px #fff;
-  margin-top: 30px;
+.tombol:hover {
+  background: white;
+  box-shadow: 0 0 15px #fff, 0 0 20px #0ff;
 }
