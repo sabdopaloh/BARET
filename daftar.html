@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Formulir Pendaftaran BARET</title>
 </head>
 <body>
   <h1>Formulir Pendaftaran BARET</h1>
 
   <form id="form-daftar">
-    <label>Nama Lengkap:</label><br />
-    <input type="text" name="nama" required /><br /><br />
+    <label>Nama Lengkap:</label><br>
+    <input type="text" name="nama" required><br><br>
 
-    <label>Email:</label><br />
-    <input type="email" name="email" required /><br /><br />
+    <label>Email:</label><br>
+    <input type="email" name="email" required><br><br>
 
-    <label>Tanggal Daftar:</label><br />
-    <input type="date" name="tanggal" required /><br /><br />
+    <label>Tanggal Daftar:</label><br>
+    <input type="date" name="tanggal" required><br><br>
 
-    <label>Kata Sandi:</label><br />
-    <input type="password" name="password" required /><br /><br />
+    <label>Kata Sandi:</label><br>
+    <input type="password" name="password" required><br><br>
 
     <button type="submit">Daftar</button>
   </form>
@@ -38,19 +38,19 @@
         method: 'POST',
         body: data
       })
-      .then(response => response.text())
-      .then(result => {
-        if (result === 'pendaftaran_berhasil') {
-          status.innerText = '✅ Pendaftaran berhasil!';
+      .then(res => res.text())
+      .then(response => {
+        if (response === "pendaftaran_berhasil") {
+          status.innerHTML = "✅ Pendaftaran berhasil!";
           form.reset();
-        } else if (result === 'email_terdaftar') {
-          status.innerText = '❌ Email sudah terdaftar!';
+        } else if (response === "email_terdaftar") {
+          status.innerHTML = "⚠️ Email sudah terdaftar!";
         } else {
-          status.innerText = '❌ Pendaftaran gagal: ' + result;
+          status.innerHTML = "❌ Pendaftaran gagal: " + response;
         }
       })
       .catch(error => {
-        status.innerText = '❌ Terjadi kesalahan: ' + error;
+        status.innerHTML = "❌ Terjadi kesalahan: " + error;
       });
     });
   </script>
