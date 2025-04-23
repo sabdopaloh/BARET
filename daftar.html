@@ -32,24 +32,23 @@
     form.addEventListener('submit', e => {
       e.preventDefault();
       const data = new FormData(form);
-
       fetch(scriptURL, {
         method: 'POST',
         body: data
       })
-      .then(response => response.text())
+      .then(res => res.text())
       .then(result => {
         if (result === 'pendaftaran_berhasil') {
-          status.innerText = '✅ Pendaftaran berhasil!';
+          status.innerHTML = '✅ Pendaftaran berhasil!';
           form.reset();
         } else if (result === 'email_terdaftar') {
-          status.innerText = '⚠️ Email sudah terdaftar!';
+          status.innerHTML = '⚠️ Email sudah terdaftar!';
         } else {
-          status.innerText = '❌ Pendaftaran gagal: ' + result;
+          status.innerHTML = '❌ Pendaftaran gagal: ' + result;
         }
       })
       .catch(error => {
-        status.innerText = '❌ Terjadi kesalahan: ' + error;
+        status.innerText = '⚠️ Terjadi kesalahan: ' + error;
       });
     });
   </script>
