@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Login Anggota BARET</title>
 </head>
 <body>
   <h1>Login Anggota BARET</h1>
-
   <form id="form-login">
-    <label>Email:</label><br />
-    <input type="email" name="email" required /><br /><br />
+    <label>Email:</label><br>
+    <input type="email" name="email" required><br><br>
 
-    <label>Kata Sandi:</label><br />
-    <input type="password" name="password" required /><br /><br />
+    <label>Kata Sandi:</label><br>
+    <input type="password" name="password" required><br><br>
 
     <button type="submit">Login</button>
   </form>
@@ -37,7 +36,7 @@
         if (result === 'login_berhasil') {
           status.innerText = '✅ Login berhasil!';
         } else {
-          status.innerText = '❌ Login gagal. Periksa kembali email dan kata sandi.';
+          status.innerText = '❌ Login gagal. Periksa email dan kata sandi.';
         }
       })
       .catch(error => {
