@@ -39,4 +39,18 @@
       })
       .then(res => res.text())
       .then(result => {
-        if (
+        if (result === "pendaftaran_berhasil") {
+          status.innerText = "✅ Pendaftaran berhasil!";
+        } else if (result === "email_terdaftar") {
+          status.innerText = "⚠️ Email sudah terdaftar.";
+        } else {
+          status.innerText = "❌ Terjadi kesalahan: " + result;
+        }
+      })
+      .catch(error => {
+        status.innerText = "❌ Terjadi kesalahan: " + error;
+      });
+    }
+  </script>
+</body>
+</html>
