@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>Login BARET</title>
+  <meta charset="UTF-8" />
+  <title>Login Anggota BARET</title>
 </head>
 <body>
   <h1>Login Anggota BARET</h1>
+
   <form id="form-login">
     <label>Email:</label><br />
-    <input type="email" name="email" required><br /><br />
+    <input type="email" name="email" required /><br /><br />
 
     <label>Kata Sandi:</label><br />
-    <input type="password" name="password" required><br /><br />
+    <input type="password" name="password" required /><br /><br />
 
     <button type="submit">Login</button>
   </form>
@@ -31,16 +32,16 @@
         method: 'POST',
         body: data
       })
-      .then(res => res.text())
+      .then(response => response.text())
       .then(result => {
         if (result === 'login_berhasil') {
-          status.innerHTML = '✅ Login berhasil!';
+          status.innerText = '✅ Login berhasil!';
         } else {
-          status.innerHTML = '❌ Login gagal. Periksa email dan sandi.';
+          status.innerText = '❌ Login gagal. Periksa kembali email dan kata sandi.';
         }
       })
-      .catch(err => {
-        status.innerText = '❌ Terjadi kesalahan: ' + err;
+      .catch(error => {
+        status.innerText = '❌ Terjadi kesalahan: ' + error;
       });
     });
   </script>
