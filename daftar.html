@@ -30,29 +30,29 @@
     const form = document.getElementById('form-daftar');
     const status = document.getElementById('status');
 
-    form.addEventListener('submit', e => {{
+    form.addEventListener('submit', e => {
       e.preventDefault();
       const data = new FormData(form);
 
-      fetch(scriptURL, {{
+      fetch(scriptURL, {
         method: 'POST',
         body: data
-      }})
+      })
       .then(response => response.text())
-      .then(result => {{
-        if (result === 'pendaftaran_berhasil') {{
+      .then(result => {
+        if (result === 'pendaftaran_berhasil') {
           status.innerText = 'Pendaftaran berhasil!';
           form.reset();
-        }} else if (result === 'email_terdaftar') {{
+        } else if (result === 'email_terdaftar') {
           status.innerText = 'Email sudah terdaftar!';
-        }} else {{
+        } else {
           status.innerText = 'Pendaftaran gagal: ' + result;
-        }}
-      }})
-      .catch(error => {{
+        }
+      })
+      .catch(error => {
         status.innerText = 'Terjadi kesalahan: ' + error;
-      }});
-    }});
+      });
+    });
   </script>
 </body>
 </html>
