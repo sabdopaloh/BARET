@@ -1,63 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8" />
   <title>Formulir Pendaftaran BARET</title>
-  <meta charset="UTF-8">
-  <style>
-    body { font-family: Arial; }
-    .error { color: red; }
-    .success { color: green; }
-  </style>
 </head>
 <body>
   <h1>Formulir Pendaftaran BARET</h1>
-  
-  <label>Nama Lengkap:</label><br>
-  <input type="text" id="nama"><br><br>
-  
-  <label>Email:</label><br>
-  <input type="email" id="email"><br><br>
-
-  <label>Tanggal Daftar:</label><br>
-  <input type="date" id="tanggal"><br><br>
-
-  <label>Kata Sandi:</label><br>
-  <input type="password" id="password"><br><br>
-
-  <button onclick="daftar()">Daftar</button>
-
+  <form id="formPendaftaran">
+    <label>Nama Lengkap:<br><input type="text" name="nama" required /></label><br><br>
+    <label>Email:<br><input type="email" name="email" required /></label><br><br>
+    <label>Tanggal Daftar:<br><input type="date" name="tanggal" required /></label><br><br>
+    <label>Kata Sandi:<br><input type="password" name="password" required /></label><br><br>
+    <button type="submit">Daftar</button>
+  </form>
   <p id="status"></p>
 
   <script>
-    function daftar() {
-      const nama = document.getElementById("nama").value;
-      const email = document.getElementById("email").value;
-      const tanggal = document.getElementById("tanggal").value;
-      const password = document.getElementById("password").value;
-      const status = document.getElementById("status");
+    const form = document.getElementById('formPendaftaran');
+    const status = document.getElementById('status');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const data = new FormData(form);
 
       fetch("https://script.google.com/macros/s/AKfycbx9Fg4T7W035WMTpmhrFGUPsrWm9w5JOdVHlack5g1EyCaEn2-8miegPac6YNC9VWb9/exec", {
         method: "POST",
-        body: new URLSearchParams({ nama, email, tanggal, password })
+        body: data,
       })
       .then(res => res.text())
-      .then(result => {
-        if (result === "pendaftaran_berhasil") {
+      .then(text => {
+        if (text === "pendaftaran_berhasil") {
           status.innerHTML = "✅ Pendaftaran berhasil!";
-          status.className = "success";
-        } else if (result === "email_terdaftar") {
-          status.innerHTML = "❌ Email sudah terdaftar.";
-          status.className = "error";
+          status.style.color = "green";
+          form.reset();
+        } else if (text === "email_terdaftar") {
+          status.innerHTML = "❌ Email sudah terdaftar!";
+          status.style.color = "red";
         } else {
-          status.innerHTML = "❌ Terjadi kesalahan: " + result;
-          status.className = "error";
+          status.innerHTML = "❌ Terjadi kesalahan: " + text;
+          status.style.color = "red";
         }
       })
-      .catch(error => {
-        status.innerHTML = "❌ Gagal terhubung: " + error;
-        status.className = "error";
+      .catch(err => {
+        status.innerHTML = "❌ Gagal kirim: " + err;
+        status.style.color = "red";
       });
-    }
+    });
   </script>
 </body>
 </html>
