@@ -36,18 +36,18 @@
         method: "POST",
         body: params
       })
-      .then(response => response.text())
-      .then(result => {
-        if (result === "pendaftaran_berhasil") {
+      .then(res => res.text())
+      .then(res => {
+        if (res === "pendaftaran_berhasil") {
           status.innerText = "✅ Pendaftaran berhasil!";
-        } else if (result === "email_terdaftar") {
-          status.innerText = "⚠️ Email sudah terdaftar!";
+        } else if (res === "email_terdaftar") {
+          status.innerText = "⚠️ Email sudah terdaftar.";
         } else {
-          status.innerText = "❌ Terjadi kesalahan: " + result;
+          status.innerText = "❌ Terjadi kesalahan: " + res;
         }
       })
-      .catch(error => {
-        status.innerText = "❌ Terjadi kesalahan: " + error;
+      .catch(err => {
+        status.innerText = "❌ Gagal kirim: " + err;
       });
     });
   </script>
