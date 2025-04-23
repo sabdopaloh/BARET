@@ -41,16 +41,16 @@
       .then(response => response.text())
       .then(result => {
         if (result === 'pendaftaran_berhasil') {
-          status.innerText = 'Pendaftaran berhasil!';
+          status.innerText = '✅ Pendaftaran berhasil!';
           form.reset();
         } else if (result === 'email_terdaftar') {
-          status.innerText = 'Email sudah terdaftar!';
+          status.innerText = '⚠️ Email sudah terdaftar!';
         } else {
-          status.innerText = 'Pendaftaran gagal: ' + result;
+          status.innerText = '❌ Pendaftaran gagal: ' + result;
         }
       })
       .catch(error => {
-        status.innerText = 'Terjadi kesalahan: ' + error;
+        status.innerText = '⚠️ Terjadi kesalahan: ' + error;
       });
     });
   </script>
