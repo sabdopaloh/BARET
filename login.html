@@ -26,21 +26,20 @@
     form.addEventListener('submit', e => {
       e.preventDefault();
       const data = new FormData(form);
-
       fetch(scriptURL, {
         method: 'POST',
         body: data
       })
-      .then(response => response.text())
+      .then(res => res.text())
       .then(result => {
         if (result === 'login_berhasil') {
-          status.innerText = '✅ Login berhasil!';
+          status.innerHTML = '✅ Login berhasil!';
         } else {
-          status.innerText = '❌ Login gagal. Periksa email dan kata sandi.';
+          status.innerHTML = '❌ Login gagal. Cek email dan password.';
         }
       })
       .catch(error => {
-        status.innerText = '❌ Terjadi kesalahan: ' + error;
+        status.innerText = '⚠️ Terjadi kesalahan: ' + error;
       });
     });
   </script>
