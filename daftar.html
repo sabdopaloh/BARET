@@ -1,50 +1,53 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8" />
   <title>Formulir Pendaftaran BARET</title>
 </head>
 <body>
   <h1>Formulir Pendaftaran BARET</h1>
-  <form id="formPendaftaran">
-    <label>Nama Lengkap:<br><input type="text" name="nama" required /></label><br><br>
-    <label>Email:<br><input type="email" name="email" required /></label><br><br>
-    <label>Tanggal Daftar:<br><input type="date" name="tanggal" required /></label><br><br>
-    <label>Kata Sandi:<br><input type="password" name="password" required /></label><br><br>
+  <form id="form-daftar">
+    <label>Nama Lengkap:</label><br>
+    <input type="text" name="nama" required><br><br>
+
+    <label>Email:</label><br>
+    <input type="email" name="email" required><br><br>
+
+    <label>Tanggal Daftar:</label><br>
+    <input type="date" name="tanggal" required><br><br>
+
+    <label>Kata Sandi:</label><br>
+    <input type="password" name="password" required><br><br>
+
     <button type="submit">Daftar</button>
   </form>
   <p id="status"></p>
 
   <script>
-    const form = document.getElementById('formPendaftaran');
-    const status = document.getElementById('status');
+    const form = document.getElementById("form-daftar");
+    const status = document.getElementById("status");
 
-    form.addEventListener('submit', function(e) {
+    form.addEventListener("submit", function(e) {
       e.preventDefault();
 
-      const data = new FormData(form);
+      const formData = new FormData(form);
+      const params = new URLSearchParams(formData);
 
       fetch("https://script.google.com/macros/s/AKfycbx9Fg4T7W035WMTpmhrFGUPsrWm9w5JOdVHlack5g1EyCaEn2-8miegPac6YNC9VWb9/exec", {
         method: "POST",
-        body: data,
+        body: params
       })
-      .then(res => res.text())
-      .then(text => {
-        if (text === "pendaftaran_berhasil") {
-          status.innerHTML = "✅ Pendaftaran berhasil!";
-          status.style.color = "green";
-          form.reset();
-        } else if (text === "email_terdaftar") {
-          status.innerHTML = "❌ Email sudah terdaftar!";
-          status.style.color = "red";
+      .then(response => response.text())
+      .then(result => {
+        if (result === "pendaftaran_berhasil") {
+          status.innerText = "✅ Pendaftaran berhasil!";
+        } else if (result === "email_terdaftar") {
+          status.innerText = "⚠️ Email sudah terdaftar!";
         } else {
-          status.innerHTML = "❌ Terjadi kesalahan: " + text;
-          status.style.color = "red";
+          status.innerText = "❌ Terjadi kesalahan: " + result;
         }
       })
-      .catch(err => {
-        status.innerHTML = "❌ Gagal kirim: " + err;
-        status.style.color = "red";
+      .catch(error => {
+        status.innerText = "❌ Terjadi kesalahan: " + error;
       });
     });
   </script>
