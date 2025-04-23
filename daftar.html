@@ -5,51 +5,38 @@
 </head>
 <body>
   <h1>Formulir Pendaftaran BARET</h1>
-  <form id="form-daftar">
-    <label>Nama Lengkap:</label><br>
-    <input type="text" name="nama" required><br><br>
+  <label>Nama Lengkap:</label><br>
+  <input type="text" id="nama"><br><br>
 
-    <label>Email:</label><br>
-    <input type="email" name="email" required><br><br>
+  <label>Email:</label><br>
+  <input type="email" id="email"><br><br>
 
-    <label>Tanggal Daftar:</label><br>
-    <input type="date" name="tanggal" required><br><br>
+  <label>Tanggal Daftar:</label><br>
+  <input type="date" id="tanggal"><br><br>
 
-    <label>Kata Sandi:</label><br>
-    <input type="password" name="password" required><br><br>
+  <label>Kata Sandi:</label><br>
+  <input type="password" id="password"><br><br>
 
-    <button type="submit">Daftar</button>
-  </form>
+  <button onclick="daftar()">Daftar</button>
   <p id="status"></p>
 
   <script>
-    const form = document.getElementById("form-daftar");
-    const status = document.getElementById("status");
-
-    form.addEventListener("submit", function(e) {
-      e.preventDefault();
-
-      const formData = new FormData(form);
-      const params = new URLSearchParams(formData);
+    function daftar() {
+      const nama = document.getElementById("nama").value;
+      const email = document.getElementById("email").value;
+      const tanggal = document.getElementById("tanggal").value;
+      const password = document.getElementById("password").value;
+      const status = document.getElementById("status");
 
       fetch("https://script.google.com/macros/s/AKfycbx9Fg4T7W035WMTpmhrFGUPsrWm9w5JOdVHlack5g1EyCaEn2-8miegPac6YNC9VWb9/exec", {
         method: "POST",
-        body: params
+        body: new URLSearchParams({
+          nama: nama,
+          email: email,
+          tanggal: tanggal,
+          password: password
+        })
       })
       .then(res => res.text())
-      .then(res => {
-        if (res === "pendaftaran_berhasil") {
-          status.innerText = "✅ Pendaftaran berhasil!";
-        } else if (res === "email_terdaftar") {
-          status.innerText = "⚠️ Email sudah terdaftar.";
-        } else {
-          status.innerText = "❌ Terjadi kesalahan: " + res;
-        }
-      })
-      .catch(err => {
-        status.innerText = "❌ Gagal kirim: " + err;
-      });
-    });
-  </script>
-</body>
-</html>
+      .then(result => {
+        if (
