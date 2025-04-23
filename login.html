@@ -35,13 +35,13 @@
       .then(response => response.text())
       .then(result => {
         if (result === 'login_berhasil') {
-          status.innerText = 'Login berhasil!';
+          status.innerText = '✅ Login berhasil!';
         } else {
-          status.innerText = 'Login gagal. Periksa kembali email dan kata sandi.';
+          status.innerText = '❌ Login gagal. Periksa kembali email dan kata sandi.';
         }
       })
       .catch(error => {
-        status.innerText = 'Terjadi kesalahan: ' + error;
+        status.innerText = '⚠️ Terjadi kesalahan: ' + error;
       });
     });
   </script>
