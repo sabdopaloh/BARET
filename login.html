@@ -1,49 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
   <title>Login BARET</title>
+  <meta charset="UTF-8">
+  <style>
+    body { font-family: Arial; }
+    .error { color: red; }
+    .success { color: green; }
+  </style>
 </head>
 <body>
   <h1>Login BARET</h1>
 
-  <form id="form-login">
-    <label>Email:</label><br>
-    <input type="email" name="email" required><br><br>
+  <label>Email:</label><br>
+  <input type="email" id="email"><br><br>
 
-    <label>Kata Sandi:</label><br>
-    <input type="password" name="password" required><br><br>
+  <label>Kata Sandi:</label><br>
+  <input type="password" id="password"><br><br>
 
-    <button type="submit">Login</button>
-  </form>
+  <button onclick="login()">Login</button>
 
   <p id="status"></p>
 
   <script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbx9Fg4T7W035WMTpmhrFGUPsrWm9w5JOdVHlack5g1EyCaEn2-8miegPac6YNC9VWb9/exec';
-    const form = document.getElementById('form-login');
-    const status = document.getElementById('status');
+    function login() {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+      const status = document.getElementById("status");
 
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-      const data = new FormData(form);
-
-      fetch(scriptURL, {
-        method: 'POST',
-        body: data
+      fetch("https://script.google.com/macros/s/AKfycbx9Fg4T7W035WMTpmhrFGUPsrWm9w5JOdVHlack5g1EyCaEn2-8miegPac6YNC9VWb9/exec", {
+        method: "POST",
+        body: new URLSearchParams({ email, password })
       })
       .then(res => res.text())
-      .then(response => {
-        if (response === "login_berhasil") {
+      .then(result => {
+        if (result === "login_berhasil") {
           status.innerHTML = "✅ Login berhasil!";
+          status.className = "success";
         } else {
           status.innerHTML = "❌ Login gagal! Periksa email dan kata sandi.";
+          status.className = "error";
         }
       })
       .catch(error => {
-        status.innerHTML = "❌ Terjadi kesalahan: " + error;
+        status.innerHTML = "❌ Gagal koneksi: " + error;
+        status.className = "error";
       });
-    });
+    }
   </script>
 </body>
 </html>
