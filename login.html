@@ -5,45 +5,40 @@
 </head>
 <body>
   <h1>Login BARET</h1>
-  <form id="form-login">
-    <label>Email:</label><br>
-    <input type="email" name="email" required><br><br>
+  <label>Email:</label><br>
+  <input type="email" id="email"><br><br>
 
-    <label>Kata Sandi:</label><br>
-    <input type="password" name="password" required><br><br>
+  <label>Kata Sandi:</label><br>
+  <input type="password" id="password"><br><br>
 
-    <button type="submit">Login</button>
-  </form>
+  <button onclick="login()">Login</button>
   <p id="status"></p>
 
   <script>
-    const form = document.getElementById("form-login");
-    const status = document.getElementById("status");
-
-    form.addEventListener("submit", function(e) {
-      e.preventDefault();
-
-      const formData = new FormData(form);
-      const params = new URLSearchParams(formData);
+    function login() {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+      const status = document.getElementById("status");
 
       fetch("https://script.google.com/macros/s/AKfycbx9Fg4T7W035WMTpmhrFGUPsrWm9w5JOdVHlack5g1EyCaEn2-8miegPac6YNC9VWb9/exec", {
         method: "POST",
-        body: params
+        body: new URLSearchParams({
+          email: email,
+          password: password
+        })
       })
-      .then(response => response.text())
+      .then(res => res.text())
       .then(result => {
         if (result === "login_berhasil") {
           status.innerText = "✅ Login berhasil!";
-        } else if (result === "login_gagal") {
-          status.innerText = "❌ Login gagal! Periksa email dan kata sandi.";
         } else {
-          status.innerText = "❌ Terjadi kesalahan: " + result;
+          status.innerText = "❌ Login gagal! Periksa email dan kata sandi.";
         }
       })
       .catch(error => {
         status.innerText = "❌ Terjadi kesalahan: " + error;
       });
-    });
+    }
   </script>
 </body>
 </html>
