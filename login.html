@@ -24,26 +24,26 @@
     const form = document.getElementById('form-login');
     const status = document.getElementById('status');
 
-    form.addEventListener('submit', e => {{
+    form.addEventListener('submit', e => {
       e.preventDefault();
       const data = new FormData(form);
 
-      fetch(scriptURL, {{
+      fetch(scriptURL, {
         method: 'POST',
         body: data
-      }})
+      })
       .then(response => response.text())
-      .then(result => {{
-        if (result === 'login_berhasil') {{
+      .then(result => {
+        if (result === 'login_berhasil') {
           status.innerText = 'Login berhasil!';
-        }} else {{
+        } else {
           status.innerText = 'Login gagal. Periksa kembali email dan kata sandi.';
-        }}
-      }})
-      .catch(error => {{
+        }
+      })
+      .catch(error => {
         status.innerText = 'Terjadi kesalahan: ' + error;
-      }});
-    }});
+      });
+    });
   </script>
 </body>
 </html>
