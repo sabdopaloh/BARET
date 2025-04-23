@@ -36,8 +36,9 @@
       .then(result => {
         if (result === 'login_berhasil') {
           status.innerText = '✅ Login berhasil!';
+          // window.location.href = 'beranda.html'; // bisa redirect ke halaman lain di sini
         } else {
-          status.innerText = '❌ Login gagal. Periksa email dan kata sandi.';
+          status.innerText = '❌ Login gagal. Email atau kata sandi salah.';
         }
       })
       .catch(error => {
