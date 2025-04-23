@@ -1,26 +1,33 @@
-<!-- login.html -->
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>Login Anggota BARET</title>
+  <meta charset="UTF-8" />
+  <title>Formulir Pendaftaran BARET</title>
 </head>
 <body>
-  <h1>Login Anggota BARET</h1>
-  <form id="form-login">
-    <label>Email:</label><br>
-    <input type="email" name="email" required><br><br>
+  <h1>Formulir Pendaftaran BARET</h1>
 
-    <label>Kata Sandi:</label><br>
-    <input type="password" name="password" required><br><br>
+  <form id="form-daftar">
+    <label>Nama Lengkap:</label><br />
+    <input type="text" name="nama" required /><br /><br />
 
-    <button type="submit">Login</button>
+    <label>Email:</label><br />
+    <input type="email" name="email" required /><br /><br />
+
+    <label>Tanggal Daftar:</label><br />
+    <input type="date" name="tanggal" required /><br /><br />
+
+    <label>Kata Sandi:</label><br />
+    <input type="password" name="password" required /><br /><br />
+
+    <button type="submit">Daftar</button>
   </form>
+
   <p id="status"></p>
 
   <script>
     const scriptURL = 'https://script.google.com/macros/s/AKfycbx9Fg4T7W035WMTpmhrFGUPsrWm9w5JOdVHlack5g1EyCaEn2-8miegPac6YNC9VWb9/exec';
-    const form = document.getElementById('form-login');
+    const form = document.getElementById('form-daftar');
     const status = document.getElementById('status');
 
     form.addEventListener('submit', e => {
@@ -33,14 +40,17 @@
       })
       .then(response => response.text())
       .then(result => {
-        if (result === 'login_berhasil') {
-          status.innerText = '✅ Login berhasil!';
+        if (result === 'pendaftaran_berhasil') {
+          status.innerHTML = '✅ Pendaftaran berhasil!';
+          form.reset();
+        } else if (result === 'email_terdaftar') {
+          status.innerHTML = '⚠️ Email sudah terdaftar!';
         } else {
-          status.innerText = '❌ Login gagal. Periksa email dan kata sandi.';
+          status.innerHTML = '❌ Pendaftaran gagal: ' + result;
         }
       })
       .catch(error => {
-        status.innerText = '❌ Terjadi kesalahan: ' + error;
+        status.innerHTML = '⚠️ Terjadi kesalahan: ' + error;
       });
     });
   </script>
