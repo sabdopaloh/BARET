@@ -1,58 +1,63 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
   <title>Formulir Pendaftaran BARET</title>
+  <meta charset="UTF-8">
+  <style>
+    body { font-family: Arial; }
+    .error { color: red; }
+    .success { color: green; }
+  </style>
 </head>
 <body>
   <h1>Formulir Pendaftaran BARET</h1>
+  
+  <label>Nama Lengkap:</label><br>
+  <input type="text" id="nama"><br><br>
+  
+  <label>Email:</label><br>
+  <input type="email" id="email"><br><br>
 
-  <form id="form-daftar">
-    <label>Nama Lengkap:</label><br>
-    <input type="text" name="nama" required><br><br>
+  <label>Tanggal Daftar:</label><br>
+  <input type="date" id="tanggal"><br><br>
 
-    <label>Email:</label><br>
-    <input type="email" name="email" required><br><br>
+  <label>Kata Sandi:</label><br>
+  <input type="password" id="password"><br><br>
 
-    <label>Tanggal Daftar:</label><br>
-    <input type="date" name="tanggal" required><br><br>
-
-    <label>Kata Sandi:</label><br>
-    <input type="password" name="password" required><br><br>
-
-    <button type="submit">Daftar</button>
-  </form>
+  <button onclick="daftar()">Daftar</button>
 
   <p id="status"></p>
 
   <script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbx9Fg4T7W035WMTpmhrFGUPsrWm9w5JOdVHlack5g1EyCaEn2-8miegPac6YNC9VWb9/exec';
-    const form = document.getElementById('form-daftar');
-    const status = document.getElementById('status');
+    function daftar() {
+      const nama = document.getElementById("nama").value;
+      const email = document.getElementById("email").value;
+      const tanggal = document.getElementById("tanggal").value;
+      const password = document.getElementById("password").value;
+      const status = document.getElementById("status");
 
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-      const data = new FormData(form);
-
-      fetch(scriptURL, {
-        method: 'POST',
-        body: data
+      fetch("https://script.google.com/macros/s/AKfycbx9Fg4T7W035WMTpmhrFGUPsrWm9w5JOdVHlack5g1EyCaEn2-8miegPac6YNC9VWb9/exec", {
+        method: "POST",
+        body: new URLSearchParams({ nama, email, tanggal, password })
       })
       .then(res => res.text())
-      .then(response => {
-        if (response === "pendaftaran_berhasil") {
+      .then(result => {
+        if (result === "pendaftaran_berhasil") {
           status.innerHTML = "✅ Pendaftaran berhasil!";
-          form.reset();
-        } else if (response === "email_terdaftar") {
-          status.innerHTML = "⚠️ Email sudah terdaftar!";
+          status.className = "success";
+        } else if (result === "email_terdaftar") {
+          status.innerHTML = "❌ Email sudah terdaftar.";
+          status.className = "error";
         } else {
-          status.innerHTML = "❌ Pendaftaran gagal: " + response;
+          status.innerHTML = "❌ Terjadi kesalahan: " + result;
+          status.className = "error";
         }
       })
       .catch(error => {
-        status.innerHTML = "❌ Terjadi kesalahan: " + error;
+        status.innerHTML = "❌ Gagal terhubung: " + error;
+        status.className = "error";
       });
-    });
+    }
   </script>
 </body>
 </html>
