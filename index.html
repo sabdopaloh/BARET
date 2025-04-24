@@ -2,40 +2,36 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <title>Selamat Datang di BARET</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
-      text-align: center;
-      padding-top: 100px;
-    }
-
-    h1 {
-      color: #333;
-      margin-bottom: 40px;
-    }
-
-    .btn {
-      display: inline-block;
-      margin: 10px;
-      padding: 12px 24px;
-      font-size: 16px;
-      text-decoration: none;
-      color: white;
-      background-color: #007BFF;
-      border-radius: 6px;
-      transition: background-color 0.3s ease;
-    }
-
-    .btn:hover {
-      background-color: #0056b3;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BARET - Barisan Remaja Tempel</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-  <h1>Selamat Datang di BARET</h1>
-  <a href="daftar.html" class="btn">Daftar</a>
-  <a href="login.html" class="btn">Login</a>
+  <header class="navbar">
+    <img src="logo.gif" alt="Logo BARET" class="logo" />
+    <nav>
+      <ul>
+        <li><a href="index.html"><i class="fas fa-home"></i> Beranda</a></li>
+        <li><a href="tentang.html"><i class="fas fa-info-circle"></i> Tentang</a></li>
+        <li><a href="kegiatan.html"><i class="fas fa-calendar"></i> Kegiatan</a></li>
+        <li><a href="struktur.html"><i class="fas fa-users"></i> Struktur</a></li>
+        <li><a href="kontak.html"><i class="fas fa-envelope"></i> Kontak</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-glow"></div>
+      <img src="foto_baret.jpg" alt="Foto BARET" class="group-photo" />
+      <h1>Selamat Datang di BARET</h1>
+      <p class="slogan">BERIMAN, BERSAHAJA, & BERMASYARAKAT</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 BARET - Barisan Remaja Tempel</p>
+  </footer>
 </body>
 </html>
