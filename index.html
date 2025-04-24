@@ -3,113 +3,123 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>BARET | Beranda</title>
+  <title>BARET | Barisan Remaja Tempel</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to bottom, #003366, #007bff);
-      color: white;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #007bff, #3399ff);
+      color: #fff;
     }
 
-    nav {
-      background-color: #00274D;
+    .navbar {
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      padding: 0 1rem;
+      align-items: center;
+      background-color: #022c5b;
+      padding: 10px 20px;
+      flex-wrap: wrap;
     }
 
-    .logo img {
-      height: 60px;
-      margin: 5px 0;
+    .navbar img {
+      height: 50px;
     }
 
-    .menu {
+    .navbar ul {
+      list-style: none;
       display: flex;
-      gap: 1.5rem;
+      padding: 0;
+      margin: 0;
     }
 
-    .menu a {
-      color: white;
+    .navbar li {
+      margin: 0 15px;
+    }
+
+    .navbar a {
+      color: #fff;
       text-decoration: none;
       font-weight: bold;
-      display: flex;
-      align-items: center;
-      gap: 5px;
     }
 
-    .menu a:hover {
-      color: #FFD700;
-    }
-
-    .marquee-container {
-      background-color: #111;
+    .marquee-wrapper {
+      background-color: #000;
       overflow: hidden;
       white-space: nowrap;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      display: flex;
+      align-items: center;
     }
 
-    .marquee-container i {
-      color: #FFD700;
-      margin-right: 10px;
+    .marquee-wrapper i {
+      color: yellow;
+      margin: 0 10px;
+      font-size: 20px;
+      flex-shrink: 0;
     }
 
     .marquee {
       display: inline-block;
-      padding: 10px 0;
-      animation: slide 25s linear infinite;
+      padding-left: 100%;
+      animation: marquee 20s linear infinite;
     }
 
-    @keyframes slide {
-      from { transform: translateX(100%); }
-      to { transform: translateX(-100%); }
+    @keyframes marquee {
+      0% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
     }
 
-    .content {
+    .hero {
       text-align: center;
-      margin-top: 20px;
+      padding: 50px 20px;
     }
 
-    .content img {
-      width: 90%;
-      max-width: 600px;
-      border-radius: 12px;
-      box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+    .hero img {
+      max-width: 90%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
     }
 
-    @media (max-width: 768px) {
-      .menu {
+    @media (max-width: 600px) {
+      .navbar ul {
         flex-direction: column;
-        gap: 0.5rem;
+        align-items: flex-end;
+      }
+
+      .navbar li {
+        margin: 10px 0;
       }
     }
   </style>
 </head>
 <body>
-  <nav>
-    <div class="logo">
-      <img src="logo.gif" alt="Logo BARET" />
-    </div>
-    <div class="menu">
-      <a href="index.html"><i class="fas fa-home"></i> Beranda</a>
-      <a href="tentang.html"><i class="fas fa-info-circle"></i> Tentang</a>
-      <a href="kegiatan.html"><i class="fas fa-calendar-alt"></i> Kegiatan</a>
-      <a href="struktur.html"><i class="fas fa-users"></i> Struktur</a>
-      <a href="kontak.html"><i class="fas fa-envelope"></i> Kontak</a>
-    </div>
+
+  <nav class="navbar">
+    <img src="logo.gif" alt="Logo BARET" />
+    <ul>
+      <li><a href="index.html"><i class="fa fa-home"></i> Beranda</a></li>
+      <li><a href="tentang.html"><i class="fa fa-info-circle"></i> Tentang</a></li>
+      <li><a href="kegiatan.html"><i class="fa fa-calendar"></i> Kegiatan</a></li>
+      <li><a href="struktur.html"><i class="fa fa-users"></i> Struktur</a></li>
+      <li><a href="kontak.html"><i class="fa fa-envelope"></i> Kontak</a></li>
+    </ul>
   </nav>
 
-  <div class="marquee-container">
+  <div class="marquee-wrapper">
+    <i class="fa fa-bullhorn"></i>
     <div class="marquee">
-      <i class="fas fa-bullhorn"></i>
-      Untuk kumpulan yang rencana tanggal 26 April 2025 diundur menjadi tanggal 03 Mei 2025 dikarenakan bertabrakan dengan jadwal yasinan di salah satu rumah warga Dusun Tempel. Apabila kurang jelas bisa langsung live chat melalui tombol kontak. Terimakasih.
+      INFO: Untuk kumpulan yang rencana tanggal 26 April 2025 diundur menjadi tanggal 03 Mei 2025 dikarenakan bertabrakan dengan jadwal yasinan di salah satu rumah warga Dusun Tempel. Apabila kurang jelas bisa langsung live chat melalui button kontak. Terimakasih.
     </div>
   </div>
 
-  <div class="content">
-    <img src="foto_baret.jpg" alt="Foto BARET">
+  <div class="hero">
+    <img src="foto_baret.jpg" alt="Foto BARET" />
   </div>
+
 </body>
 </html>
