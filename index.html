@@ -2,149 +2,82 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>BARET | Barisan Remaja Tempel</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" type="image/x-icon" href="logo.gif">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BARET - Barisan Remaja Tempel</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(to bottom, #003366, #1e90ff);
-      color: white;
-      text-align: center;
+      background: linear-gradient(to bottom right, #007bff, #3399ff);
     }
-
-    nav {
+    .navbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: #002244;
+      background-color: #002147;
       padding: 10px 20px;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+      color: #fff;
     }
-
-    nav img {
-      height: 50px;
+    .navbar img {
+      height: 40px;
     }
-
-    nav ul {
-      list-style: none;
+    .nav-links {
       display: flex;
       gap: 20px;
-      margin: 0;
-      padding: 0;
     }
-
-    nav li {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
-
-    nav a {
-      color: white;
+    .nav-links a {
+      color: #fff;
       text-decoration: none;
       font-weight: bold;
     }
-
-    .marquee-container {
-      background: #000;
-      color: #fff;
-      padding: 5px;
+    .nav-links i {
+      margin-right: 5px;
     }
-
+    .marquee-container {
+      background-color: #ffd700;
+      color: #000;
+      font-weight: bold;
+      padding: 8px 0;
+      font-size: 14px;
+    }
     .marquee-container i {
       margin-right: 10px;
-      color: #f9d342;
     }
-
-    .marquee-text {
-      white-space: nowrap;
-      overflow: hidden;
-      box-sizing: border-box;
-      animation: marquee 25s linear infinite;
-    }
-
-    @keyframes marquee {
-      0% { transform: translateX(100%); }
-      100% { transform: translateX(-100%); }
-    }
-
-    .main-img {
-      margin: 20px auto;
-      max-width: 90%;
-      border-radius: 10px;
-    }
-
-    .social-buttons {
-      margin: 20px;
+    .content {
       display: flex;
-      justify-content: center;
-      gap: 15px;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
     }
-
-    .social-buttons a {
-      padding: 10px 20px;
+    .group-photo {
+      width: 90%;
+      max-width: 600px;
       border-radius: 8px;
-      background: white;
-      color: #333;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .footer-buttons {
-      margin: 40px 0;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 15px;
-    }
-
-    .footer-buttons a {
-      padding: 10px 15px;
-      background: #fff;
-      color: #000;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
   </style>
 </head>
 <body>
-  <nav>
+  <div class="navbar">
     <img src="logo.gif" alt="Logo BARET" />
-    <ul>
-      <li><i class="fas fa-home"></i><a href="index.html">Beranda</a></li>
-      <li><i class="fas fa-info-circle"></i><a href="tentang.html">Tentang</a></li>
-      <li><i class="fas fa-calendar-alt"></i><a href="kegiatan.html">Kegiatan</a></li>
-      <li><i class="fas fa-users"></i><a href="struktur.html">Struktur</a></li>
-      <li><i class="fas fa-envelope"></i><a href="kontak.html">Kontak</a></li>
-    </ul>
-  </nav>
-
-  <div class="marquee-container">
-    <i class="fas fa-bullhorn"></i>
-    <div class="marquee-text">
-      INFO: untuk kumpulan yang rencana tanggal 26 April 2025 diundur menjadi tanggal 03 Mei 2025 dikarenakan bertabrakan dengan jadwal yasinan di salah satu rumah warga Dusun Tempel. Apabila kurang jelas bisa langsung live chat melalui button kontak. Terimakasih.
+    <div class="nav-links">
+      <a href="index.html"><i class="fas fa-home"></i>Beranda</a>
+      <a href="tentang.html"><i class="fas fa-info-circle"></i>Tentang</a>
+      <a href="kegiatan.html"><i class="fas fa-calendar"></i>Kegiatan</a>
+      <a href="struktur.html"><i class="fas fa-users"></i>Struktur</a>
+      <a href="kontak.html"><i class="fas fa-envelope"></i>Kontak</a>
     </div>
   </div>
 
-  <img src="foto_baret.jpg" class="main-img" alt="Foto BARET" />
-
-  <div class="social-buttons">
-    <a href="https://www.tiktok.com/@baret.barisan.rem?_t=ZS-8vnpi6fatb6&_r=1" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
-    <a href="https://www.instagram.com/brt_baretempel?igsh=NzZzazRjd3pzdGcx" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+  <div class="marquee-container">
+    <marquee behavior="scroll" direction="left" scrollamount="5">
+      <i class="fas fa-bullhorn"></i>INFO: untuk kumpulan yang rencana tanggal 26 April 2025 diundur menjadi tanggal 03 Mei 2025 dikarenakan bertabrakan dengan jadwal yasinan di salah satu rumah warga Dusun Tempel. Apabila kurang jelas bisa langsung live chat melalui button kontak. Terimakasih.
+    </marquee>
   </div>
 
-  <div class="footer-buttons">
-    <a href="tentang.html">Tentang</a>
-    <a href="kegiatan.html">Kegiatan</a>
-    <a href="struktur.html">Struktur</a>
-    <a href="kontak.html">Kontak</a>
+  <div class="content">
+    <img src="foto_baret.jpg" alt="Foto Grup BARET" class="group-photo" />
   </div>
 </body>
 </html>
