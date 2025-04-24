@@ -16,16 +16,31 @@
     }
     .kontak-section a {
       display: inline-block;
-      background-color: #25D366;
-      color: white;
+      margin: 10px;
       padding: 12px 20px;
       border-radius: 8px;
       text-decoration: none;
       font-size: 1.2em;
       transition: background-color 0.3s ease;
+      color: white;
     }
-    .kontak-section a:hover {
+    .whatsapp-btn {
+      background-color: #25D366;
+    }
+    .whatsapp-btn:hover {
       background-color: #1ebe57;
+    }
+    .tiktok-btn {
+      background-color: #010101;
+    }
+    .tiktok-btn:hover {
+      background-color: #2c2c2c;
+    }
+    .instagram-btn {
+      background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+    }
+    .instagram-btn:hover {
+      filter: brightness(1.1);
     }
   </style>
 </head>
@@ -45,9 +60,15 @@
 
   <main class="kontak-section">
     <h1>Hubungi Kami</h1>
-    <p>Klik tombol di bawah ini untuk langsung terhubung dengan BARET via WhatsApp.</p>
-    <a href="https://whatsapp.com/dl" target="_blank">
-      <i class="fab fa-whatsapp"></i> Chat via WhatsApp
+    <p>Klik tombol di bawah ini untuk langsung terhubung dengan BARET melalui sosial media.</p>
+    <a href="https://whatsapp.com/dl" target="_blank" class="whatsapp-btn">
+      <i class="fab fa-whatsapp"></i> WhatsApp
+    </a>
+    <a href="https://www.tiktok.com/@baret.barisan.rem?_t=ZS-8vnpi6fatb6&_r=1" target="_blank" class="tiktok-btn">
+      <i class="fab fa-tiktok"></i> TikTok
+    </a>
+    <a href="https://www.instagram.com/brt_baretempel?igsh=NzZzazRjd3pzdGcx" target="_blank" class="instagram-btn">
+      <i class="fab fa-instagram"></i> Instagram
     </a>
   </main>
 
