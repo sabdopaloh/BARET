@@ -4,63 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BARET - Barisan Remaja Tempel</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to bottom, #003366, #3399ff);
-      color: white;
-      overflow-x: hidden;
-    }
-    nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background-color: #002b5c;
-      padding: 10px 20px;
-    }
-    nav img {
-      height: 40px;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 25px;
-    }
-    nav ul li {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .marquee {
-      background: #ffcc00;
-      color: #000;
-      padding: 8px 0;
-      font-weight: bold;
-      font-size: 14px;
-    }
-    .container {
-      display: flex;
-      justify-content: center;
-      margin-top: 40px;
-    }
-    .container img {
-      max-width: 90%;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="logo.gif" type="image/gif" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <nav>
-    <img src="logo.gif" alt="Logo BARET" />
-    <ul>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="logo.gif" alt="Logo BARET" />
+    </div>
+    <ul class="nav-links">
       <li><a href="index.html"><i class="fas fa-home"></i> Beranda</a></li>
       <li><a href="tentang.html"><i class="fas fa-info-circle"></i> Tentang</a></li>
       <li><a href="kegiatan.html"><i class="fas fa-calendar-alt"></i> Kegiatan</a></li>
@@ -69,14 +22,22 @@
     </ul>
   </nav>
 
-  <div class="marquee">
-    <marquee scrollamount="6">
-      INFO: Kumpulan yang rencana tanggal 26 April 2025 diundur menjadi 03 Mei 2025 dikarenakan bertabrakan dengan jadwal yasinan di salah satu rumah warga Dusun Tempel. Apabila kurang jelas bisa langsung live chat melalui button kontak. Terima kasih.
-    </marquee>
+  <div class="info-bar">
+    <i class="fas fa-bullhorn"></i> INFO: untuk kumpulan yang rencana tanggal 26 April 2025 diundur menjadi tanggal 03 Mei 2025 dikarenakan bertabrakan dengan jadwal yasinan di salah satu rumah warga Dusun Tempel. Apabila kurang jelas bisa langsung live chat melalui button kontak. Terimakasih.
   </div>
 
-  <div class="container">
-    <img src="foto_baret.jpg" alt="Foto BARET" />
-  </div>
+  <main>
+    <section class="hero">
+      <img src="foto_baret.jpg" alt="Foto Barisan Remaja Tempel" class="center-image" />
+    </section>
+  </main>
+
+  <footer>
+    <div class="sosmed-buttons">
+      <a href="https://www.tiktok.com/@baret.barisan.rem?_t=ZS-8vnpi6fatb6&_r=1" target="_blank" class="btn-tt">TikTok</a>
+      <a href="https://www.instagram.com/brt_baretempel?igsh=NzZzazRjd3pzdGcx" target="_blank" class="btn-ig">Instagram</a>
+    </div>
+    <p>&copy; 2025 BARET - Barisan Remaja Tempel</p>
+  </footer>
 </body>
 </html>
