@@ -2,82 +2,114 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BARET - Barisan Remaja Tempel</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BARET | Beranda</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(to bottom right, #007bff, #3399ff);
+      background: linear-gradient(to bottom, #003366, #007bff);
+      color: white;
     }
-    .navbar {
+
+    nav {
+      background-color: #00274D;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      background-color: #002147;
-      padding: 10px 20px;
-      color: #fff;
+      justify-content: space-between;
+      padding: 0 1rem;
     }
-    .navbar img {
-      height: 40px;
+
+    .logo img {
+      height: 60px;
+      margin: 5px 0;
     }
-    .nav-links {
+
+    .menu {
       display: flex;
-      gap: 20px;
+      gap: 1.5rem;
     }
-    .nav-links a {
-      color: #fff;
+
+    .menu a {
+      color: white;
       text-decoration: none;
       font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 5px;
     }
-    .nav-links i {
-      margin-right: 5px;
+
+    .menu a:hover {
+      color: #FFD700;
     }
+
     .marquee-container {
-      background-color: #ffd700;
-      color: #000;
-      font-weight: bold;
-      padding: 8px 0;
-      font-size: 14px;
+      background-color: #111;
+      overflow: hidden;
+      white-space: nowrap;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
     }
+
     .marquee-container i {
+      color: #FFD700;
       margin-right: 10px;
     }
+
+    .marquee {
+      display: inline-block;
+      padding: 10px 0;
+      animation: slide 25s linear infinite;
+    }
+
+    @keyframes slide {
+      from { transform: translateX(100%); }
+      to { transform: translateX(-100%); }
+    }
+
     .content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      text-align: center;
       margin-top: 20px;
     }
-    .group-photo {
+
+    .content img {
       width: 90%;
       max-width: 600px;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      border-radius: 12px;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+    }
+
+    @media (max-width: 768px) {
+      .menu {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="navbar">
-    <img src="logo.gif" alt="Logo BARET" />
-    <div class="nav-links">
-      <a href="index.html"><i class="fas fa-home"></i>Beranda</a>
-      <a href="tentang.html"><i class="fas fa-info-circle"></i>Tentang</a>
-      <a href="kegiatan.html"><i class="fas fa-calendar"></i>Kegiatan</a>
-      <a href="struktur.html"><i class="fas fa-users"></i>Struktur</a>
-      <a href="kontak.html"><i class="fas fa-envelope"></i>Kontak</a>
+  <nav>
+    <div class="logo">
+      <img src="logo.gif" alt="Logo BARET" />
+    </div>
+    <div class="menu">
+      <a href="index.html"><i class="fas fa-home"></i> Beranda</a>
+      <a href="tentang.html"><i class="fas fa-info-circle"></i> Tentang</a>
+      <a href="kegiatan.html"><i class="fas fa-calendar-alt"></i> Kegiatan</a>
+      <a href="struktur.html"><i class="fas fa-users"></i> Struktur</a>
+      <a href="kontak.html"><i class="fas fa-envelope"></i> Kontak</a>
+    </div>
+  </nav>
+
+  <div class="marquee-container">
+    <div class="marquee">
+      <i class="fas fa-bullhorn"></i>
+      Untuk kumpulan yang rencana tanggal 26 April 2025 diundur menjadi tanggal 03 Mei 2025 dikarenakan bertabrakan dengan jadwal yasinan di salah satu rumah warga Dusun Tempel. Apabila kurang jelas bisa langsung live chat melalui tombol kontak. Terimakasih.
     </div>
   </div>
 
-  <div class="marquee-container">
-    <marquee behavior="scroll" direction="left" scrollamount="5">
-      <i class="fas fa-bullhorn"></i>INFO: untuk kumpulan yang rencana tanggal 26 April 2025 diundur menjadi tanggal 03 Mei 2025 dikarenakan bertabrakan dengan jadwal yasinan di salah satu rumah warga Dusun Tempel. Apabila kurang jelas bisa langsung live chat melalui button kontak. Terimakasih.
-    </marquee>
-  </div>
-
   <div class="content">
-    <img src="foto_baret.jpg" alt="Foto Grup BARET" class="group-photo" />
+    <img src="foto_baret.jpg" alt="Foto BARET">
   </div>
 </body>
 </html>
