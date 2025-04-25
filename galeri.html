@@ -1,73 +1,57 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Galeri BARET</title>
+  <title>BARET | Galeri</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
       background: linear-gradient(to bottom right, #007bff, #3399ff);
-      color: white;
+      color: #fff;
       text-align: center;
       padding: 40px 20px;
     }
-
-    h1 {
-      font-size: 2em;
-      margin-bottom: 10px;
-    }
-
-    p {
-      font-size: 1.1em;
-      margin-bottom: 40px;
-    }
-
-    .btn-home {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: #000;
-      color: white;
-      padding: 12px 25px;
-      font-size: 16px;
+    .back-button {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 24px;
+      background-color: #fff;
+      color: #001f3f;
       border: none;
-      border-radius: 30px;
+      border-radius: 10px;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
       text-decoration: none;
-      box-shadow: 0 0 20px #00f0ff, 0 0 30px #00f0ff inset;
-      transition: all 0.3s ease;
-      animation: pulse 2s infinite;
+      box-shadow: 0 5px #999;
+      transition: all 0.2s ease;
     }
-
-    .btn-home:hover {
-      transform: scale(1.05) rotate(1deg);
-      box-shadow: 0 0 25px #00f0ff, 0 0 35px #00f0ff inset;
-      background: #111;
+    .back-button:hover {
+      background-color: #ffc107;
+      color: #000;
+      transform: translateY(2px);
+      box-shadow: 0 2px #666;
     }
-
-    .btn-home img {
+    .back-button:active {
+      transform: scale(0.95);
+      box-shadow: 0 1px #333;
+    }
+    .back-button img {
       width: 24px;
       height: 24px;
-    }
-
-    @keyframes pulse {
-      0% { box-shadow: 0 0 20px #00f0ff, 0 0 30px #00f0ff inset; }
-      50% { box-shadow: 0 0 30px #00f0ff, 0 0 40px #00f0ff inset; }
-      100% { box-shadow: 0 0 20px #00f0ff, 0 0 30px #00f0ff inset; }
+      margin-right: 10px;
+      vertical-align: middle;
     }
   </style>
 </head>
 <body>
-
-  <h1>📸 Galeri Kegiatan BARET</h1>
-  <p>Halaman ini akan menampilkan dokumentasi foto dan video kegiatan BARET.</p>
-
-  <a href="index.html" class="btn-home">
-    <img src="blue-house-icon-Photoroom.png" alt="Home Icon">
-    Kembali ke Beranda
+  <h1>Galeri</h1>
+  <p>Dokumentasi kegiatan dan momen bersama BARET.</p>
+  <a href="index.html" class="back-button">
+    <img src="images/blue-house-icon.png" alt="Home Icon" /> Kembali ke Beranda
   </a>
-
 </body>
 </html>

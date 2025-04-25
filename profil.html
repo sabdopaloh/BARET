@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Profil | BARET</title>
+  <title>BARET | Profil</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <style>
     body {
@@ -13,50 +12,46 @@
       background: linear-gradient(to bottom right, #007bff, #3399ff);
       color: #fff;
       text-align: center;
+      padding: 40px 20px;
     }
-    .content {
-      padding: 50px 20px;
-    }
-    .kembali-btn {
+    .back-button {
       display: inline-block;
       margin-top: 30px;
-      text-decoration: none;
-      padding: 12px 20px;
-      border-radius: 12px;
-      background: linear-gradient(to right, #1e90ff, #00bfff);
-      color: white;
+      padding: 12px 24px;
+      background-color: #fff;
+      color: #001f3f;
+      border: none;
+      border-radius: 10px;
       font-weight: bold;
       font-size: 16px;
-      position: relative;
-      transition: all 0.3s ease;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 5px #999;
+      transition: all 0.2s ease;
     }
-    .kembali-btn:hover {
-      transform: translateY(-4px) scale(1.05);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    .back-button:hover {
+      background-color: #ffc107;
+      color: #000;
+      transform: translateY(2px);
+      box-shadow: 0 2px #666;
     }
-    .kembali-btn img {
+    .back-button:active {
+      transform: scale(0.95);
+      box-shadow: 0 1px #333;
+    }
+    .back-button img {
       width: 24px;
       height: 24px;
-      margin-right: 8px;
+      margin-right: 10px;
       vertical-align: middle;
-      animation: rotateGlow 3s infinite linear;
-    }
-    @keyframes rotateGlow {
-      0% { transform: rotate(0deg); filter: drop-shadow(0 0 5px #00f); }
-      50% { filter: drop-shadow(0 0 15px #fff); }
-      100% { transform: rotate(360deg); filter: drop-shadow(0 0 5px #00f); }
     }
   </style>
 </head>
 <body>
-  <div class="content">
-    <h1>Profil Anggota</h1>
-    <p>Halaman ini menampilkan informasi profil anggota BARET.</p>
-    
-    <a href="index.html" class="kembali-btn">
-      <img src="blue-house-icon.png" alt="Beranda" /> Kembali ke Beranda
-    </a>
-  </div>
+  <h1>Profil Anggota</h1>
+  <p>Data dan profil singkat anggota BARET.</p>
+  <a href="index.html" class="back-button">
+    <img src="images/blue-house-icon.png" alt="Home Icon" /> Kembali ke Beranda
+  </a>
 </body>
 </html>

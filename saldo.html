@@ -1,10 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>💰 Saldo Kas</title>
+  <title>BARET | Saldo</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <style>
     body {
       margin: 0;
@@ -12,47 +12,46 @@
       background: linear-gradient(to bottom right, #007bff, #3399ff);
       color: #fff;
       text-align: center;
-      padding-top: 60px;
+      padding: 40px 20px;
     }
-
-    h1 {
-      font-size: 2em;
-    }
-
-    p {
-      font-size: 1.1em;
-      margin-bottom: 30px;
-    }
-
     .back-button {
-      display: inline-flex;
-      align-items: center;
-      background-color: #000;
+      display: inline-block;
+      margin-top: 30px;
       padding: 12px 24px;
-      color: #fff;
+      background-color: #fff;
+      color: #001f3f;
+      border: none;
+      border-radius: 10px;
       font-weight: bold;
-      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
       text-decoration: none;
-      box-shadow: 0 0 15px #00ffff;
-      transition: all 0.3s ease;
+      box-shadow: 0 5px #999;
+      transition: all 0.2s ease;
     }
-
     .back-button:hover {
-      transform: scale(1.05) rotate(1deg);
-      box-shadow: 0 0 25px #00ffff, 0 0 40px #00ffff;
+      background-color: #ffc107;
+      color: #000;
+      transform: translateY(2px);
+      box-shadow: 0 2px #666;
     }
-
+    .back-button:active {
+      transform: scale(0.95);
+      box-shadow: 0 1px #333;
+    }
     .back-button img {
-      height: 20px;
+      width: 24px;
+      height: 24px;
       margin-right: 10px;
+      vertical-align: middle;
     }
   </style>
 </head>
 <body>
-  <h1>💰 💰 Saldo Kas</h1>
-  <p>Halaman ini berisi informasi saldo kas BARET.</p>
+  <h1>Informasi Saldo</h1>
+  <p>Transparansi keuangan dan saldo kas BARET.</p>
   <a href="index.html" class="back-button">
-    <img src="082dce112041515d39a27e2c124c3070-blue-house-icon-Photoroom.png" alt="Home Icon" /> Kembali ke Beranda
+    <img src="images/blue-house-icon.png" alt="Home Icon" /> Kembali ke Beranda
   </a>
 </body>
 </html>
