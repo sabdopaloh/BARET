@@ -4,7 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>🧑‍🤝‍🧑 Profil Anggota</title>
+  <title>Profil | BARET</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <style>
     body {
       margin: 0;
@@ -12,47 +13,50 @@
       background: linear-gradient(to bottom right, #007bff, #3399ff);
       color: #fff;
       text-align: center;
-      padding-top: 60px;
     }
-
-    h1 {
-      font-size: 2em;
+    .content {
+      padding: 50px 20px;
     }
-
-    p {
-      font-size: 1.1em;
-      margin-bottom: 30px;
-    }
-
-    .back-button {
-      display: inline-flex;
-      align-items: center;
-      background-color: #000;
-      padding: 12px 24px;
-      color: #fff;
-      font-weight: bold;
-      border-radius: 30px;
+    .kembali-btn {
+      display: inline-block;
+      margin-top: 30px;
       text-decoration: none;
-      box-shadow: 0 0 15px #00ffff;
+      padding: 12px 20px;
+      border-radius: 12px;
+      background: linear-gradient(to right, #1e90ff, #00bfff);
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+      position: relative;
       transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     }
-
-    .back-button:hover {
-      transform: scale(1.05) rotate(1deg);
-      box-shadow: 0 0 25px #00ffff, 0 0 40px #00ffff;
+    .kembali-btn:hover {
+      transform: translateY(-4px) scale(1.05);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
     }
-
-    .back-button img {
-      height: 20px;
-      margin-right: 10px;
+    .kembali-btn img {
+      width: 24px;
+      height: 24px;
+      margin-right: 8px;
+      vertical-align: middle;
+      animation: rotateGlow 3s infinite linear;
+    }
+    @keyframes rotateGlow {
+      0% { transform: rotate(0deg); filter: drop-shadow(0 0 5px #00f); }
+      50% { filter: drop-shadow(0 0 15px #fff); }
+      100% { transform: rotate(360deg); filter: drop-shadow(0 0 5px #00f); }
     }
   </style>
 </head>
 <body>
-  <h1>🧑‍🤝‍🧑 🧑‍🤝‍🧑 Profil Anggota</h1>
-  <p>Halaman ini berisi informasi singkat mengenai profil anggota BARET.</p>
-  <a href="index.html" class="back-button">
-    <img src="082dce112041515d39a27e2c124c3070-blue-house-icon-Photoroom.png" alt="Home Icon" /> Kembali ke Beranda
-  </a>
+  <div class="content">
+    <h1>Profil Anggota</h1>
+    <p>Halaman ini menampilkan informasi profil anggota BARET.</p>
+    
+    <a href="index.html" class="kembali-btn">
+      <img src="blue-house-icon.png" alt="Beranda" /> Kembali ke Beranda
+    </a>
+  </div>
 </body>
 </html>
