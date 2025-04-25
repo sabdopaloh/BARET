@@ -2,118 +2,172 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BARET - Barisan Remaja Tempel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BARET | Barisan Remaja Tempel</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #007bff, #3399ff);
+      color: #fff;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #022c5b;
+      padding: 10px 20px;
+      flex-wrap: wrap;
+    }
+
+    .navbar img {
+      height: 50px;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
       padding: 0;
-      background: #f9f9f9;
+      margin: 0;
+    }
+
+    .navbar li {
+      margin: 0 15px;
+    }
+
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .marquee-wrapper {
+      background-color: #000;
+      overflow: hidden;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+    }
+
+    .marquee-wrapper i {
+      color: yellow;
+      margin: 0 10px;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .marquee {
+      display: inline-block;
+      padding-left: 100%;
+      animation: marquee 20s linear infinite;
+    }
+
+    @keyframes marquee {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    .hero {
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    .hero img {
+      max-width: 90%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    }
+
+    footer {
+      background-color: #001f3f;
+      padding: 20px 10px;
       text-align: center;
     }
 
-    .logo {
-      width: 120px;
-      margin-top: 20px;
-    }
-
-    .navbar-3d {
+    .footer-buttons {
       display: flex;
-      justify-content: center;
-      gap: 15px;
-      margin: 20px 0;
       flex-wrap: wrap;
-    }
-
-    .btn-3d {
-      background: linear-gradient(145deg, #e6e6e6, #ffffff);
-      border: none;
-      padding: 15px 25px;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 16px;
-      color: #333;
-      border-radius: 12px;
-      box-shadow: 0 6px 0 #aaa, 0 9px 25px rgba(0, 0, 0, 0.1);
-      transition: all 0.2s ease;
-      position: relative;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .btn-3d:active {
-      top: 4px;
-      box-shadow: 0 2px 0 #aaa, 0 5px 15px rgba(0, 0, 0, 0.2);
-    }
-
-    .btn-3d:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 9px 15px rgba(0, 0, 0, 0.2);
-    }
-
-    .hero-image {
-      margin: 30px auto;
-      max-width: 90%;
-      border-radius: 15px;
-    }
-
-    marquee {
-      background: #222;
-      color: #fff;
-      padding: 10px;
-      font-size: 16px;
-    }
-
-    .button-section {
-      margin-top: 30px;
-      display: flex;
       justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
+      gap: 12px;
     }
 
-    .button-section a {
-      background-color: #333;
-      color: #fff;
-      padding: 12px 20px;
-      text-decoration: none;
+    .footer-btn {
+      background: #fff;
+      color: #001f3f;
+      padding: 10px 18px;
       border-radius: 10px;
+      text-decoration: none;
       font-weight: bold;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-      transition: background 0.3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 5px #999;
+      transition: all 0.2s ease;
     }
 
-    .button-section a:hover {
-      background-color: #555;
+    .footer-btn:hover {
+      background: #ffc107;
+      color: #000;
+      transform: translateY(2px);
+      box-shadow: 0 2px #666;
+    }
+
+    @media (max-width: 600px) {
+      .navbar ul {
+        flex-direction: column;
+        align-items: flex-end;
+      }
+
+      .navbar li {
+        margin: 10px 0;
+      }
     }
   </style>
 </head>
 <body>
-  <!-- Logo -->
-  <img src="Untitled-1.gif" alt="Logo BARET" class="logo" />
 
-  <!-- Navbar 3D Buttons with Icons -->
-  <div class="navbar-3d">
-    <a href="galeri.html" class="btn-3d">📷 Galeri</a>
-    <a href="visi-misi.html" class="btn-3d">🎯 Visi & Misi</a>
-    <a href="saldo.html" class="btn-3d">💰 Saldo</a>
-    <a href="jadwal.html" class="btn-3d">📅 Jadwal</a>
-    <a href="profil.html" class="btn-3d">🙍‍♂️ Profil</a>
+  <nav class="navbar">
+    <img src="logo.gif" alt="Logo BARET" />
+    <ul>
+      <li><a href="index.html"><i class="fa fa-home"></i> Beranda</a></li>
+      <li><a href="galeri.html"><i class="fa fa-image"></i> Galeri</a></li>
+      <li><a href="visi.html"><i class="fa fa-bullseye"></i> Visi & Misi</a></li>
+      <li><a href="jadwal.html"><i class="fa fa-calendar"></i> Jadwal</a></li>
+      <li><a href="saldo.html"><i class="fa fa-wallet"></i> Saldo</a></li>
+      <li><a href="profil.html"><i class="fa fa-user"></i> Profil</a></li>
+    </ul>
+  </nav>
+
+  <div class="marquee-wrapper">
+    <i class="fa fa-bullhorn"></i>
+    <div class="marquee">
+      INFO: Untuk kumpulan yang rencana tanggal 26 April 2025 diundur menjadi tanggal 03 Mei 2025 karena bertabrakan dengan jadwal yasinan di salah satu rumah warga Dusun Tempel. Info lanjut hubungi via tombol Live Chat.
+    </div>
   </div>
 
-  <!-- Marquee berjalan -->
-  <marquee behavior="scroll" direction="left">📢 Jadwal kumpulan BARET minggu ini: Hari Minggu, pukul 16.00 WIB di Balai Dusun Tempel. Jangan lupa hadir ya! 🙌</marquee>
-
-  <!-- Foto utama -->
-  <img src="foto_baret.jpg" alt="Foto BARET" class="hero-image" />
-
-  <!-- Tombol bawah -->
-  <div class="button-section">
-    <a href="daftar.html">📝 Daftar</a>
-    <a href="login.html">🔐 Login</a>
-    <a href="https://wa.me/6281234567890">📱 Hubungi Kami</a>
+  <div class="hero">
+    <img src="foto_baret.jpg" alt="Foto BARET" />
   </div>
+
+  <footer>
+    <div class="footer-buttons">
+      <a href="tentang.html" class="footer-btn"><i class="fas fa-info-circle"></i> Tentang</a>
+      <a href="kegiatan.html" class="footer-btn"><i class="fas fa-calendar-alt"></i> Kegiatan</a>
+      <a href="struktur.html" class="footer-btn"><i class="fas fa-users"></i> Struktur</a>
+      <a href="https://wa.me/?text=Halo%20saya%20ingin%20bertanya%20tentang%20BARET" target="_blank" class="footer-btn">
+        <i class="fas fa-comments"></i> Live Chat
+      </a>
+      <a href="https://www.instagram.com/brt_baretempel?igsh=NzZzazRjd3pzdGcx" target="_blank" class="footer-btn">
+        <i class="fab fa-instagram"></i> Instagram
+      </a>
+      <a href="https://www.tiktok.com/@baret.barisan.rem?_t=ZS-8vnpi6fatb6&_r=1" target="_blank" class="footer-btn">
+        <i class="fab fa-tiktok"></i> TikTok
+      </a>
+    </div>
+  </footer>
+
 </body>
 </html>
