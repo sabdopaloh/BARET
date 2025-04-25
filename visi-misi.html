@@ -1,207 +1,46 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Visi & Misi | BARET - Barisan Remaja Tempel</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visi & Misi - BARET</title>
   <style>
     body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to bottom right, #007bff, #3399ff);
-      color: #fff;
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
     }
 
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: #022c5b;
-      padding: 10px 20px;
-      flex-wrap: wrap;
+    h2 {
+      color: #222;
+      margin-top: 30px;
     }
 
-    .navbar img {
-      height: 50px;
-    }
-
-    .navbar ul {
-      list-style: none;
-      display: flex;
-      padding: 0;
-      margin: 0;
-    }
-
-    .navbar li {
-      margin: 0 15px;
-    }
-
-    .navbar a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .marquee-wrapper {
-      background-color: #000;
-      overflow: hidden;
-      white-space: nowrap;
-      display: flex;
-      align-items: center;
-    }
-
-    .marquee-wrapper i {
-      color: yellow;
-      margin: 0 10px;
-      font-size: 20px;
-      flex-shrink: 0;
-    }
-
-    .marquee {
-      display: inline-block;
-      padding-left: 100%;
-      animation: marquee 20s linear infinite;
-    }
-
-    @keyframes marquee {
-      0% { transform: translateX(0%); }
-      100% { transform: translateX(-100%); }
-    }
-
-    .hero {
-      text-align: center;
-      padding: 50px 20px;
-    }
-
-    .hero img {
-      max-width: 90%;
-      height: auto;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.3);
-    }
-
-    .content-section {
-      padding: 40px 20px;
-      text-align: center;
-    }
-
-    .content-section h2 {
-      font-size: 32px;
-      margin-bottom: 15px;
-    }
-
-    .content-section p {
-      font-size: 18px;
+    p {
       max-width: 800px;
-      margin: 0 auto 30px auto;
-    }
-
-    footer {
-      background-color: #001f3f;
-      padding: 20px 10px;
-      text-align: center;
-    }
-
-    .footer-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 12px;
-    }
-
-    .footer-btn {
-      background: #fff;
-      color: #001f3f;
-      padding: 10px 18px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: bold;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      box-shadow: 0 5px #999;
-      transition: all 0.2s ease;
-    }
-
-    .footer-btn:hover {
-      background: #ffc107;
-      color: #000;
-      transform: translateY(2px);
-      box-shadow: 0 2px #666;
-    }
-
-    @media (max-width: 600px) {
-      .navbar ul {
-        flex-direction: column;
-        align-items: flex-end;
-      }
-
-      .navbar li {
-        margin: 10px 0;
-      }
+      margin-bottom: 20px;
     }
   </style>
 </head>
 <body>
 
-  <nav class="navbar">
-    <img src="logo.gif" alt="Logo BARET" />
-    <ul>
-      <li><a href="index.html"><i class="fa fa-home"></i> Beranda</a></li>
-      <li><a href="galeri.html"><i class="fa fa-image"></i> Galeri</a></li>
-      <li><a href="visi-misi.html"><i class="fa fa-bullseye"></i> Visi & Misi</a></li>
-      <li><a href="jadwal.html"><i class="fa fa-calendar"></i> Jadwal</a></li>
-      <li><a href="saldo.html"><i class="fa fa-wallet"></i> Saldo</a></li>
-      <li><a href="profil.html"><i class="fa fa-user"></i> Profil</a></li>
-    </ul>
-  </nav>
+  <h2>Visi</h2>
+  <p>
+    Mempererat tali persaudaraan antar pemuda untuk meningkatkan partisipasi pemuda dalam kegiatan-kegiatan yang bermanfaat di masyarakat guna meningkatkan peran organisasi kepemudaan.<br>
+    Mewujudkan generasi muda yang berilmu pengetahuan, kreatif, mandiri, tangguh, beriman, berkualitas dan bertanggung jawab.
+  </p>
 
-  <div class="marquee-wrapper">
-    <i class="fa fa-bullhorn"></i>
-    <div class="marquee">
-      INFO: Untuk kumpulan yang rencana tanggal 26 April 2025 diundur menjadi tanggal 03 Mei 2025 karena bertabrakan dengan jadwal yasinan di salah satu rumah warga Dusun Tempel. Info lanjut hubungi via tombol Live Chat.
-    </div>
-  </div>
-
-  <div class="hero">
-    <img src="foto_baret.jpg" alt="Foto BARET" />
-  </div>
-
-  <section class="content-section">
-    <h2>Visi</h2>
-    <p>
-      Mempererat tali persaudaraan antar pemuda untuk meningkatkan partisipasi pemuda dalam kegiatan-kegiatan yang bermanfaat di masyarakat guna meningkatkan peran organisasi kepemudaan.<br>
-      Mewujudkan generasi muda yang berilmu pengetahuan, kreatif, mandiri, tangguh, beriman, berkualitas dan bertanggung jawab.
-    </p>
-
-    <h2>Misi</h2>
-    <p>
-      Terwujudnya pemuda-pemudi yang bertakwa kepada Tuhan Yang Maha Esa penuh perhatian dan peka terhadap masalah dengan daya tahan fisik dan mental yang kuat dan Teguh dalam pendiriannya serta mampu berkreasi dan berkarya di lingkungan masyarakat.<br>
-      Membangun dan meningkatkan Ekonomi Produktif.<br>
-      Kepedulian terhadap lingkungan sosial masyarakat.<br>
-      Menggalang kemitraan dengan berbagai pihak yang berkompeten dalam masalah Pemuda dan sosial kemasyarakatan.<br>
-      Terwujudnya kesejahteraan sosial yang semakin meningkat bagi warga Desa Maracang pada umumnya dan khususnya generasi muda yang memungkinkan pelaksanaan fungsi sosialnya sebagai manusia pembangunan yang mampu mengatasi masalah sosial di lingkungannya.<br>
-      Melestarikan kesenian daerah serta pembangunan minat untuk berolahraga.
-    </p>
-  </section>
-
-  <footer>
-    <div class="footer-buttons">
-      <a href="tentang.html" class="footer-btn"><i class="fas fa-info-circle"></i> Tentang</a>
-      <a href="kegiatan.html" class="footer-btn"><i class="fas fa-calendar-alt"></i> Kegiatan</a>
-      <a href="struktur.html" class="footer-btn"><i class="fas fa-users"></i> Struktur</a>
-      <a href="https://wa.me/?text=Halo%20saya%20ingin%20bertanya%20tentang%20BARET" target="_blank" class="footer-btn">
-        <i class="fas fa-comments"></i> Live Chat
-      </a>
-      <a href="https://www.instagram.com/brt_baretempel?igsh=NzZzazRjd3pzdGcx" target="_blank" class="footer-btn">
-        <i class="fab fa-instagram"></i> Instagram
-      </a>
-      <a href="https://www.tiktok.com/@baret.barisan.rem?_t=ZS-8vnpi6fatb6&_r=1" target="_blank" class="footer-btn">
-        <i class="fab fa-tiktok"></i> TikTok
-      </a>
-    </div>
-  </footer>
+  <h2>Misi</h2>
+  <p>
+    Terwujudnya pemuda-pemudi yang bertakwa kepada Tuhan Yang Maha Esa penuh perhatian dan peka terhadap masalah dengan daya tahan fisik dan mental yang kuat dan Teguh dalam pendiriannya serta mampu berkreasi dan berkarya di lingkungan masyarakat.<br>
+    Membangun dan meningkatkan Ekonomi Produktif.<br>
+    Kepedulian terhadap lingkungan sosial masyarakat.<br>
+    Menggalang kemitraan dengan berbagai pihak yang berkompeten dalam masalah Pemuda dan sosial kemasyarakatan.<br>
+    Terwujudnya kesejahteraan sosial yang semakin meningkat bagi warga Desa Maracang pada umumnya dan khususnya generasi muda yang memungkinkan pelaksanaan fungsi sosialnya sebagai manusia pembangunan yang mampu mengatasi masalah sosial di lingkungannya.<br>
+    Melestarikan kesenian daerah serta pembangunan minat untuk berolahraga.
+  </p>
 
 </body>
 </html>
