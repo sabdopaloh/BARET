@@ -1,52 +1,73 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Galeri Kegiatan</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <title>Galeri BARET</title>
   <style>
     body {
       margin: 0;
-      padding: 0;
       font-family: 'Segoe UI', sans-serif;
       background: linear-gradient(to bottom right, #007bff, #3399ff);
       color: white;
       text-align: center;
-      padding-top: 100px;
+      padding: 40px 20px;
     }
+
     h1 {
-      font-size: 32px;
+      font-size: 2em;
       margin-bottom: 10px;
     }
+
     p {
-      font-size: 16px;
+      font-size: 1.1em;
       margin-bottom: 40px;
     }
-    .back-btn {
-      display: inline-block;
-      background-color: #000;
-      color: #fff;
-      padding: 12px 24px;
-      border-radius: 20px;
+
+    .btn-home {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #000;
+      color: white;
+      padding: 12px 25px;
       font-size: 16px;
-      font-weight: bold;
+      border: none;
+      border-radius: 30px;
       text-decoration: none;
-      box-shadow: 0 0 20px rgba(0, 191, 255, 0.7);
-      transition: 0.3s ease;
+      box-shadow: 0 0 20px #00f0ff, 0 0 30px #00f0ff inset;
+      transition: all 0.3s ease;
+      animation: pulse 2s infinite;
     }
-    .back-btn i {
-      margin-right: 8px;
+
+    .btn-home:hover {
+      transform: scale(1.05) rotate(1deg);
+      box-shadow: 0 0 25px #00f0ff, 0 0 35px #00f0ff inset;
+      background: #111;
     }
-    .back-btn:hover {
-      background-color: #111;
-      transform: scale(1.05);
+
+    .btn-home img {
+      width: 24px;
+      height: 24px;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 20px #00f0ff, 0 0 30px #00f0ff inset; }
+      50% { box-shadow: 0 0 30px #00f0ff, 0 0 40px #00f0ff inset; }
+      100% { box-shadow: 0 0 20px #00f0ff, 0 0 30px #00f0ff inset; }
     }
   </style>
 </head>
 <body>
-  <h1>📸 Galeri Kegiatan</h1>
-  <p>Berisi dokumentasi foto kegiatan BARET.</p>
-  <a href="index.html" class="back-btn"><i class="fas fa-home"></i> Kembali ke Beranda</a>
+
+  <h1>📸 Galeri Kegiatan BARET</h1>
+  <p>Halaman ini akan menampilkan dokumentasi foto dan video kegiatan BARET.</p>
+
+  <a href="index.html" class="btn-home">
+    <img src="blue-house-icon-Photoroom.png" alt="Home Icon">
+    Kembali ke Beranda
+  </a>
+
 </body>
 </html>
