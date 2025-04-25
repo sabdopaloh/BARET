@@ -12,27 +12,71 @@
       background: linear-gradient(to bottom right, #007bff, #3399ff);
       color: #fff;
       text-align: center;
-      padding: 50px 20px;
+      padding: 40px 20px;
     }
 
     h1 {
-      font-size: 36px;
+      font-size: 40px;
       margin-bottom: 20px;
     }
 
-    p {
-      font-size: 18px;
+    .content {
       max-width: 800px;
       margin: 0 auto;
+      text-align: left;
+      background-color: rgba(0, 0, 0, 0.3);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    }
+
+    .content p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .back-button {
+      display: inline-block;
+      margin-top: 30px;
+      background-color: #fff;
+      color: #007bff;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .back-button i {
+      margin-right: 8px;
+    }
+
+    .back-button:hover {
+      background-color: #ffc107;
+      color: #000;
     }
   </style>
 </head>
 <body>
 
   <h1>Visi & Misi</h1>
-  <p>
-    Visi dan misi BARET adalah untuk membentuk generasi muda yang berilmu, beriman, dan mampu berkontribusi aktif dalam masyarakat dengan semangat kebersamaan dan kepedulian sosial.
-  </p>
+
+  <div class="content">
+    <p>
+      <strong>Visi:</strong><br>
+      Mewujudkan remaja yang BERIMAN, BERSAHAJA, dan BERMASYARAKAT.
+    </p>
+    <p>
+      <strong>Misi:</strong><br>
+      1. Menanamkan nilai-nilai keimanan dan ketakwaan sejak dini.<br>
+      2. Mendorong gaya hidup sederhana dan saling peduli.<br>
+      3. Menggalang kebersamaan dan peran aktif dalam masyarakat.
+    </p>
+
+    <a href="index.html" class="back-button"><i class="fa fa-arrow-left"></i> Kembali ke Beranda</a>
+  </div>
 
 </body>
 </html>
