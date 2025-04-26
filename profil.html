@@ -2,56 +2,28 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>BARET | Profil</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BARET - Profil</title>
+  <link rel="stylesheet" href="style.css" />
   <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to bottom right, #007bff, #3399ff);
-      color: #fff;
-      text-align: center;
-      padding: 40px 20px;
+    body { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    .navbar { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; padding: 10px 20px; }
+    img { max-width: 100%; height: auto; }
+    @media (max-width: 768px) {
+      .navbar { flex-direction: column; text-align: center; }
+      .marquee-text { font-size: 14px; }
+      .hero-image { width: 100%; height: auto; }
+      .btn-kembali { margin: 20px auto; display: block; width: fit-content; }
+      .footer { flex-direction: column; text-align: center; }
     }
-    .back-button {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 12px 24px;
-      background-color: #fff;
-      color: #001f3f;
-      border: none;
-      border-radius: 10px;
-      font-weight: bold;
-      font-size: 16px;
-      cursor: pointer;
-      text-decoration: none;
-      box-shadow: 0 5px #999;
-      transition: all 0.2s ease;
-    }
-    .back-button:hover {
-      background-color: #ffc107;
-      color: #000;
-      transform: translateY(2px);
-      box-shadow: 0 2px #666;
-    }
-    .back-button:active {
-      transform: scale(0.95);
-      box-shadow: 0 1px #333;
-    }
-    .back-button img {
-      width: 24px;
-      height: 24px;
-      margin-right: 10px;
-      vertical-align: middle;
+    @media (min-width: 769px) {
+      .content { display: flex; flex-direction: row; gap: 40px; }
+      .hero-text { font-size: 1.3em; }
     }
   </style>
 </head>
 <body>
-  <h1>Profil Anggota</h1>
-  <p>Data dan profil singkat anggota BARET.</p>
-  <a href="index.html" class="back-button">
-    <img src="images/blue-house-icon.png" alt="Home Icon" /> Kembali ke Beranda
-  </a>
+  <!-- Konten profil di sini -->
 </body>
 </html>
