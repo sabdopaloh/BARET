@@ -125,6 +125,39 @@
         margin: 10px 0;
       }
     }
+
+    .popup {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background-color: #ff9800;
+      padding: 15px;
+      border-radius: 10px;
+      color: #fff;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      display: none;
+      z-index: 9999;
+      width: 250px;
+      font-size: 14px;
+    }
+
+    .popup i {
+      font-size: 18px;
+      margin-right: 10px;
+    }
+
+    .popup .close {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      font-size: 18px;
+      cursor: pointer;
+      color: #fff;
+    }
+
+    .popup.show {
+      display: block;
+    }
   </style>
 </head>
 <body>
@@ -168,6 +201,24 @@
       </a>
     </div>
   </footer>
+
+  <!-- Popup -->
+  <div id="popup" class="popup">
+    <i class="fa fa-info-circle"></i> Ini adalah informasi atau iklan yang dapat ditutup.
+    <span class="close" onclick="closePopup()">&times;</span>
+  </div>
+
+  <script>
+    // Show popup after 2 seconds
+    setTimeout(function() {
+      document.getElementById('popup').classList.add('show');
+    }, 2000);
+
+    // Close popup
+    function closePopup() {
+      document.getElementById('popup').classList.remove('show');
+    }
+  </script>
 
 </body>
 </html>
