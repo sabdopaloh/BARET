@@ -1,35 +1,46 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Karang Taruna</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/YOUR-FONT-AWESOME-CODE.js" crossorigin="anonymous"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Website BARET</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header>
-        <h1>Karang Taruna</h1>
-    </header>
-    
-    <nav>
-        <button class="btn-3d" onclick="location.href='tentang.html'">
-            <i class="fas fa-info-circle"></i> Tentang
-        </button>
-        <button class="btn-3d" onclick="location.href='profil.html'">
-            <i class="fas fa-user"></i> Profil
-        </button>
-        <button class="btn-3d" onclick="location.href='visi.html'">
-            <i class="fas fa-bullseye"></i> Visi & Misi
-        </button>
-        <button class="btn-3d" onclick="location.href='saldo.html'">
-            <i class="fas fa-wallet"></i> Saldo
-        </button>
-        <button class="btn-3d" onclick="location.href='galeri.html'">
-            <i class="fas fa-image"></i> Galeri
-        </button>
-    </nav>
+  <header>
+    <img src="assets/logo.gif" alt="Logo BARET" class="logo" />
+    <h1>SELAMAT DATANG DI WEBSITE RESMI BARISAN REMAJA TEMPEL</h1>
+  </header>
 
-    <script src="script.js"></script>
+  <aside class="sidebar">
+    <div class="sidebar-btn" onclick="showLabel(this, 'Beranda')">
+      <img src="assets/icon-home.png" alt="Home" />
+      <span class="label"></span>
+    </div>
+    <div class="sidebar-btn" onclick="showLabel(this, 'Dokumen')">
+      <img src="assets/icon-docs.png" alt="Dokumen" />
+      <span class="label"></span>
+    </div>
+    <div class="sidebar-btn" onclick="showLabel(this, 'Galeri')">
+      <img src="assets/icon-gallery.png" alt="Galeri" />
+      <span class="label"></span>
+    </div>
+    <div class="sidebar-btn" onclick="showLabel(this, 'Anggota')">
+      <img src="assets/icon-user.png" alt="Akun" />
+      <span class="label"></span>
+    </div>
+  </aside>
+
+  <script>
+    function showLabel(button, text) {
+      const label = button.querySelector('.label');
+      label.textContent = text;
+      label.style.opacity = '1';
+      setTimeout(() => {
+        label.style.opacity = '0';
+      }, 2000);
+    }
+  </script>
 </body>
 </html>

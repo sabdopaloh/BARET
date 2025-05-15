@@ -1,41 +1,56 @@
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: black;
-    color: gold;
-    text-align: center;
+  margin: 0;
+  font-family: sans-serif;
+  background: #1a001a;
+  color: white;
 }
 
 header {
-    padding: 20px;
-    background-color: gold;
-    color: black;
+  text-align: center;
+  background: purple;
+  padding: 20px;
 }
 
-nav {
-    margin-top: 20px;
+.logo {
+  width: 100px;
 }
 
-.btn-3d {
-    font-size: 18px;
-    padding: 15px 30px;
-    margin: 10px;
-    background: gold;
-    color: black;
-    border: none;
-    cursor: pointer;
-    border-radius: 10px;
-    box-shadow: 0px 5px 0px darkgoldenrod;
-    transition: all 0.2s ease-in-out;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+.sidebar {
+  position: fixed;
+  left: 10px;
+  top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.btn-3d i {
-    font-size: 20px;
+.sidebar-btn {
+  position: relative;
+  transition: transform 0.1s ease;
 }
 
-.btn-3d:active {
-    box-shadow: 0px 2px 0px darkgoldenrod;
-    transform: translateY(3px);
+.sidebar-btn:active {
+  transform: scale(0.9);
+}
+
+.sidebar-btn img {
+  width: 40px;
+  cursor: pointer;
+}
+
+.label {
+  position: absolute;
+  top: 50%;
+  left: 60px;
+  transform: translateY(-50%);
+  background: #000;
+  color: gold;
+  padding: 5px 10px;
+  border-radius: 5px;
+  white-space: nowrap;
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
 }
