@@ -1,46 +1,57 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Website BARET</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Karang Taruna BARET - Login & Daftar</title>
+<link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <img src="assets/logo.gif" alt="Logo BARET" class="logo" />
-    <h1>SELAMAT DATANG DI WEBSITE RESMI BARISAN REMAJA TEMPEL</h1>
-  </header>
+  <div class="container">
 
-  <aside class="sidebar">
-    <div class="sidebar-btn" onclick="showLabel(this, 'Beranda')">
-      <img src="assets/icon-home.png" alt="Home" />
-      <span class="label"></span>
-    </div>
-    <div class="sidebar-btn" onclick="showLabel(this, 'Dokumen')">
-      <img src="assets/icon-docs.png" alt="Dokumen" />
-      <span class="label"></span>
-    </div>
-    <div class="sidebar-btn" onclick="showLabel(this, 'Galeri')">
-      <img src="assets/icon-gallery.png" alt="Galeri" />
-      <span class="label"></span>
-    </div>
-    <div class="sidebar-btn" onclick="showLabel(this, 'Anggota')">
-      <img src="assets/icon-user.png" alt="Akun" />
-      <span class="label"></span>
-    </div>
-  </aside>
+    <header>
+      <div class="logo">LOGO SAYA</div>
+      <div class="login-form">
+        <input type="text" id="username" placeholder="USERNAME" />
+        <input type="password" id="password" placeholder="PASSWORD" />
+        <button id="btnLogin">LOGIN</button>
+        <button id="btnRegister">DAFTAR</button>
+      </div>
+    </header>
 
-  <script>
-    function showLabel(button, text) {
-      const label = button.querySelector('.label');
-      label.textContent = text;
-      label.style.opacity = '1';
-      setTimeout(() => {
-        label.style.opacity = '0';
-      }, 2000);
-    }
-  </script>
+    <div class="marquee">
+      <div class="marquee-text">📢 SELAMAT DATANG DI WEBSITE RESMI BARISAN REMAJA TEMPEL</div>
+    </div>
+
+    <div id="page1" class="page active">
+      <img src="https://i.ibb.co/2yvXYk3/group-photo.jpg" alt="Anggota" class="group-photo" />
+      <div class="social-icons">
+        <a href="#" target="_blank"><img src="https://i.ibb.co/jH0tPRq/instagram.png" alt="Instagram" /></a>
+        <a href="#" target="_blank"><img src="https://i.ibb.co/QKhVZyG/tiktok.png" alt="TikTok" /></a>
+        <a href="#" target="_blank"><img src="https://i.ibb.co/dQJvJpR/facebook.png" alt="Facebook" /></a>
+        <a href="#" target="_blank"><img src="https://i.ibb.co/mRWh5Q3/whatsapp.png" alt="WhatsApp" /></a>
+      </div>
+    </div>
+
+    <div id="page2" class="page">
+      <div class="sidebar">
+        <button class="sidebar-btn active" data-text="HOME">🏠</button>
+        <button class="sidebar-btn" data-text="BERITA">📄</button>
+        <button class="sidebar-btn" data-text="EDIT">✍️</button>
+        <button class="sidebar-btn" data-text="GALERI">🖼️</button>
+        <button class="sidebar-btn" data-text="PROFIL">👤</button>
+      </div>
+      <div class="content-box" id="contentBox">
+        <p>Selamat datang, <span id="userDisplay"></span>!</p>
+        <p>Pilih menu dari sidebar kiri.</p>
+      </div>
+      <div class="saldo-box">
+        <button><span>💼 SALDO</span></button>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
