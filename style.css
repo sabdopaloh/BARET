@@ -1,56 +1,71 @@
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
-  font-family: sans-serif;
-  background: #1a001a;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #2c0356;
   color: white;
 }
 
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 10px;
+}
+
 header {
-  text-align: center;
-  background: purple;
-  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
 .logo {
-  width: 100px;
+  background: black;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: 900;
+  font-size: 20px;
+  color: white;
+  user-select: none;
 }
 
-.sidebar {
-  position: fixed;
-  left: 10px;
-  top: 100px;
+.login-form {
   display: flex;
-  flex-direction: column;
   gap: 10px;
+  align-items: center;
 }
 
-.sidebar-btn {
-  position: relative;
-  transition: transform 0.1s ease;
+.login-form input {
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: none;
+  font-weight: bold;
+  width: 110px;
+  text-transform: uppercase;
 }
 
-.sidebar-btn:active {
-  transform: scale(0.9);
-}
-
-.sidebar-btn img {
-  width: 40px;
+.login-form button {
+  background: transparent;
+  border: 2px solid orange;
+  border-radius: 10px;
+  color: orange;
+  font-weight: 900;
   cursor: pointer;
+  padding: 8px 16px;
+  transition: background-color 0.3s ease;
 }
 
-.label {
-  position: absolute;
-  top: 50%;
-  left: 60px;
-  transform: translateY(-50%);
-  background: #000;
-  color: gold;
-  padding: 5px 10px;
-  border-radius: 5px;
-  white-space: nowrap;
-  font-size: 14px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  pointer-events: none;
+.login-form button:hover {
+  background: orange;
+  color: black;
 }
+
+.marquee {
+  background: #550085;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  padding
