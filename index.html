@@ -1,57 +1,64 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Karang Taruna BARET - Login & Daftar</title>
-<link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Karang Taruna BARET</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+  <style>
+    body {
+      background: #2e004f;
+      color: white;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+    .header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      margin-bottom: 20px;
+    }
+    .header img {
+      width: 120px;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 0 15px gold;
+    }
+    .social-icons a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .social-icons a:hover {
+      color: gold;
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-
-    <header>
-      <div class="logo">LOGO SAYA</div>
-      <div class="login-form">
-        <input type="text" id="username" placeholder="USERNAME" />
-        <input type="password" id="password" placeholder="PASSWORD" />
-        <button id="btnLogin">LOGIN</button>
-        <button id="btnRegister">DAFTAR</button>
-      </div>
-    </header>
-
-    <div class="marquee">
-      <div class="marquee-text">📢 SELAMAT DATANG DI WEBSITE RESMI BARISAN REMAJA TEMPEL</div>
+  <div class="header">
+    <img src="LOGO BARET.gif" alt="Logo BARET" />
+    <div class="social-icons">
+      <a href="https://instagram.com/brt_baretempel" target="_blank" aria-label="Instagram">
+        <i class="fab fa-instagram fa-3x"></i>
+      </a>
+      <a href="https://www.tiktok.com/@baret.barisan.rem" target="_blank" aria-label="TikTok">
+        <i class="fab fa-tiktok fa-3x"></i>
+      </a>
+      <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+        <i class="fab fa-facebook fa-3x"></i>
+      </a>
+      <a href="https://wa.me/nomorhp" target="_blank" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp fa-3x"></i>
+      </a>
     </div>
-
-    <div id="page1" class="page active">
-      <img src="https://i.ibb.co/2yvXYk3/group-photo.jpg" alt="Anggota" class="group-photo" />
-      <div class="social-icons">
-        <a href="#" target="_blank"><img src="https://i.ibb.co/jH0tPRq/instagram.png" alt="Instagram" /></a>
-        <a href="#" target="_blank"><img src="https://i.ibb.co/QKhVZyG/tiktok.png" alt="TikTok" /></a>
-        <a href="#" target="_blank"><img src="https://i.ibb.co/dQJvJpR/facebook.png" alt="Facebook" /></a>
-        <a href="#" target="_blank"><img src="https://i.ibb.co/mRWh5Q3/whatsapp.png" alt="WhatsApp" /></a>
-      </div>
-    </div>
-
-    <div id="page2" class="page">
-      <div class="sidebar">
-        <button class="sidebar-btn active" data-text="HOME">🏠</button>
-        <button class="sidebar-btn" data-text="BERITA">📄</button>
-        <button class="sidebar-btn" data-text="EDIT">✍️</button>
-        <button class="sidebar-btn" data-text="GALERI">🖼️</button>
-        <button class="sidebar-btn" data-text="PROFIL">👤</button>
-      </div>
-      <div class="content-box" id="contentBox">
-        <p>Selamat datang, <span id="userDisplay"></span>!</p>
-        <p>Pilih menu dari sidebar kiri.</p>
-      </div>
-      <div class="saldo-box">
-        <button><span>💼 SALDO</span></button>
-      </div>
-    </div>
-
   </div>
-
-  <script src="script.js"></script>
+  <h1>Selamat datang di website resmi Karang Taruna BARET</h1>
 </body>
 </html>
