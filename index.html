@@ -1,64 +1,76 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Karang Taruna BARET</title>
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-  />
-  <style>
-    body {
-      background: #2e004f;
-      color: white;
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      padding: 20px;
-      text-align: center;
-    }
-    .header {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 40px;
-      margin-bottom: 20px;
-    }
-    .header img {
-      width: 120px;
-      height: auto;
-      border-radius: 8px;
-      box-shadow: 0 0 15px gold;
-    }
-    .social-icons a {
-      color: white;
-      margin: 0 10px;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-    .social-icons a:hover {
-      color: gold;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Pertama</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="header">
-    <img src="logo.gif" alt="Logo BARET" />
-    <div class="social-icons">
-      <a href="https://instagram.com/brt_baretempel" target="_blank" aria-label="Instagram">
-        <i class="fab fa-instagram fa-3x"></i>
-      </a>
-      <a href="https://www.tiktok.com/@baret.barisan.rem" target="_blank" aria-label="TikTok">
-        <i class="fab fa-tiktok fa-3x"></i>
-      </a>
-      <a href="https://facebook.com" target="_blank" aria-label="Facebook">
-        <i class="fab fa-facebook fa-3x"></i>
-      </a>
-      <a href="https://wa.me/nomorhp" target="_blank" aria-label="WhatsApp">
-        <i class="fab fa-whatsapp fa-3x"></i>
-      </a>
+    <div class="container">
+        <header>
+            <h1>Selamat Datang di Website Resmi Barisan Remaja Tempel</h1>
+            <button id="show-register-form">Daftar</button>
+        </header>
+
+        <div id="register-form" style="display: none;">
+            <h2>Pendaftaran</h2>
+            <form id="register-form-submit">
+                <div>
+                    <label for="register-nama">Nama:</label>
+                    <input type="text" id="register-nama" name="register-nama" required>
+                </div>
+                <div>
+                    <label for="register-wa">Nomor WhatsApp Aktif:</label>
+                    <input type="tel" id="register-wa" name="register-wa" required>
+                </div>
+                <div>
+                    <label for="register-email">Email:</label>
+                    <input type="email" id="register-email" name="register-email" required>
+                </div>
+                <div>
+                    <label for="register-password">Password:</label>
+                    <input type="password" id="register-password" name="register-password" required>
+                </div>
+                <button type="submit">Daftar</button>
+                <button type="button" id="show-login-from-register">Sudah punya akun? Login</button>
+            </form>
+            <div id="register-error" class="error-message"></div>
+            <div id="register-success" class="success-message"></div>
+        </div>
+
+        <div id="login-form">
+            <h2>Login</h2>
+            <form id="login-form-submit">
+                <div>
+                    <label for="login-email">Email:</label>
+                    <input type="email" id="login-email" name="login-email" required>
+                </div>
+                <div>
+                    <label for="login-password">Password:</label>
+                    <input type="password" id="login-password" name="login-password" required>
+                </div>
+                <button type="submit">Login</button>
+                <button type="button" id="forgot-password">Lupa Kata Sandi?</button>
+            </form>
+            <div id="login-error" class="error-message"></div>
+        </div>
+
+        <div id="forgot-password-form" style="display: none;">
+            <h2>Lupa Kata Sandi</h2>
+            <form id="forgot-password-form-submit">
+                <div>
+                    <label for="forgot-password-email">Email:</label>
+                    <input type="email" id="forgot-password-email" name="forgot-password-email" required>
+                </div>
+                <button type="submit">Kirim Email Reset Kata Sandi</button>
+                <button type="button" id="show-login-from-forgot-password">Kembali ke Login</button>
+            </form>
+            <div id="forgot-password-error" class="error-message"></div>
+            <div id="forgot-password-success" class="success-message"></div>
+        </div>
     </div>
-  </div>
-  <h1>Selamat datang di website resmi Karang Taruna BARET</h1>
+
+    <script type="module" src="auth.js"></script>
 </body>
 </html>
