@@ -5,12 +5,12 @@ import { getFirestore, doc, setDoc } from 'firebase/firestore';
 
 // Konfigurasi Firebase Anda (GANTI DENGAN KREDENSIAL PROYEK ANDA)
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY", // Ganti dengan API Key Anda
-  authDomain: "YOUR_AUTH_DOMAIN", // Ganti dengan Auth Domain Anda
-  projectId: "YOUR_PROJECT_ID", // Ganti dengan Project ID Anda
-  storageBucket: "YOUR_STORAGE_BUCKET", // Ganti dengan Storage Bucket Anda
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID", // Ganti dengan Messaging Sender ID Anda
-  appId: "YOUR_APP_ID" // Ganti dengan App ID Anda
+  apiKey: "AIzaSyADqZtzmRSMMoD_Ki9wvqSOicbMlkKZjH0",
+  authDomain: "website-remaja-tempel.firebaseapp.com",
+  projectId: "website-remaja-tempel",
+  storageBucket: "website-remaja-tempel.firebasestorage.app",
+  messagingSenderId: "9346740751",
+  appId: "1:9346740751:web:4b9e69c63a3c3fc2e1a97a"
 };
 
 // Inisialisasi Firebase
