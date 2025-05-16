@@ -1,25 +1,24 @@
-// Import the functions you need from the SDKs you need
-import { initializeApp } from 'firebase/app-compat';
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail } from 'firebase/auth-compat';
-import { getFirestore, doc, setDoc } from 'firebase/firestore-compat';
+// Import fungsi-fungsi yang diperlukan dari Firebase SDK
+import { initializeApp } from 'firebase/app';
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail } from 'firebase/auth';
+import { getFirestore, doc, setDoc } from 'firebase/firestore';
 
-// Your web app's Firebase configuration
-// *** GANTI DENGAN KONFIGURASI FIREBASE ANDA ***
+// Konfigurasi Firebase Anda (GANTI DENGAN KREDENSIAL PROYEK ANDA)
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_AUTH_DOMAIN",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_STORAGE_BUCKET",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  apiKey: "YOUR_API_KEY", // Ganti dengan API Key Anda
+  authDomain: "YOUR_AUTH_DOMAIN", // Ganti dengan Auth Domain Anda
+  projectId: "YOUR_PROJECT_ID", // Ganti dengan Project ID Anda
+  storageBucket: "YOUR_STORAGE_BUCKET", // Ganti dengan Storage Bucket Anda
+  messagingSenderId: "YOUR_MESSAGING_SENDER_ID", // Ganti dengan Messaging Sender ID Anda
+  appId: "YOUR_APP_ID" // Ganti dengan App ID Anda
 };
 
-// Initialize Firebase
+// Inisialisasi Firebase
 const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const db = getFirestore(app);
+const auth = getAuth(app); // Mendapatkan instance Firebase Auth
+const db = getFirestore(app); // Mendapatkan instance Firebase Firestore
 
-// Element References
+// Referensi Elemen HTML
 const showRegisterFormButton = document.getElementById('show-register-form');
 const registerForm = document.getElementById('register-form');
 const registerFormSubmit = document.getElementById('register-form-submit');
@@ -33,105 +32,118 @@ const showLoginFromForgotPasswordButton = document.getElementById('show-login-fr
 const registerError = document.getElementById('register-error');
 const registerSuccess = document.getElementById('register-success');
 const loginError = document.getElementById('login-error');
-const forgotPasswordError = document.getElementById('forgot-password-error');
-const forgotPasswordSuccess = document.getElementById('forgot-password-success');
 
 // Event Listeners
-showRegisterFormButton.addEventListener('click', () => {
-  loginForm.style.display = 'none';
-  registerForm.style.display = 'block';
-  forgotPasswordForm.style.display = 'none';
-});
 
-showLoginFromRegisterButton.addEventListener('click', () => {
-  registerForm.style.display = 'none';
-  loginForm.style.display = 'block';
-  forgotPasswordForm.style.display = 'none';
-});
+// Menampilkan Formulir Pendaftaran
+if (showRegisterFormButton) {
+  showRegisterFormButton.addEventListener('click', () => {
+    loginForm.style.display = 'none';
+    registerForm.style.display = 'block';
+    forgotPasswordForm.style.display = 'none';
+  });
+}
 
-forgotPasswordButton.addEventListener('click', () => {
-  loginForm.style.display = 'none';
-  forgotPasswordForm.style.display = 'block';
-  registerForm.style.display = 'none';
-});
+// Kembali ke Formulir Login dari Formulir Pendaftaran
+if (showLoginFromRegisterButton) {
+  showLoginFromRegisterButton.addEventListener('click', () => {
+    loginForm.style.display = 'block';
+    registerForm.style.display = 'none';
+    forgotPasswordForm.style.display = 'none';
+  });
+}
 
-showLoginFromForgotPasswordButton.addEventListener('click', () => {
-  forgotPasswordForm.style.display = 'none';
-  loginForm.style.display = 'block';
-  registerForm.style.display = 'none';
-});
+// Proses Pendaftaran
+if (registerFormSubmit) {
+  registerFormSubmit.addEventListener('submit', (e) => {
+    e.preventDefault(); // Mencegah form dari reload halaman
+    const nama = document.getElementById('register-nama').value;
+    const wa = document.getElementById('register-wa').value;
+    const email = document.getElementById('register-email').value;
+    const password = document.getElementById('register-password').value;
 
-registerFormSubmit.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const nama = document.getElementById('register-nama').value;
-  const wa = document.getElementById('register-wa').value;
-  const email = document.getElementById('register-email').value;
-  const password = document.getElementById('register-password').value;
+    // Membuat user baru dengan email dan password menggunakan Firebase Auth
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Pendaftaran berhasil
+        const user = userCredential.user;
+        console.log('User registered:', user);
+        registerError.textContent = '';
+        registerSuccess.textContent = 'Pendaftaran berhasil!';
 
-  createUserWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      // User registered successfully
-      const user = userCredential.user;
-      console.log('User registered:', user);
-      registerError.textContent = '';
-      registerSuccess.textContent = 'Pendaftaran berhasil! Silakan login.';
-
-      // Save additional user info to Firestore
-      return setDoc(doc(db, 'users', user.uid), {
-        nama: nama,
-        wa: wa,
-        email: email
+        // Menyimpan data tambahan user ke Firestore
+        return setDoc(doc(db, 'users', user.uid), {
+          nama: nama,
+          wa: wa,
+          email: email
+        });
+      })
+      .catch((error) => {
+        // Menangani error pendaftaran
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.error('Registration error:', errorCode, errorMessage);
+        registerError.textContent = errorMessage;
+        registerSuccess.textContent = '';
       });
-    })
-    .then(() => {
-      // Redirect to login form after successful registration
-      registerForm.style.display = 'none';
-      loginForm.style.display = 'block';
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.error('Registration error:', errorCode, errorMessage);
-      registerError.textContent = errorMessage;
-      registerSuccess.textContent = '';
-    });
-});
+  });
+}
 
-loginFormSubmit.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const email = document.getElementById('login-email').value;
-  const password = document.getElementById('login-password').value;
+// Proses Login
+if (loginFormSubmit) {
+  loginFormSubmit.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const email = document.getElementById('login-email').value;
+    const password = document.getElementById('login-password').value;
 
-  signInWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      // User logged in successfully
-      const user = userCredential.user;
-      console.log('User logged in:', user);
-      loginError.textContent = '';
-      window.location.href = '/beranda.html'; // Redirect to beranda
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.error('Login error:', errorCode, errorMessage);
-      loginError.textContent = errorMessage;
-    });
-});
+    // Login user menggunakan Firebase Auth
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Login berhasil
+        const user = userCredential.user;
+        console.log('User logged in:', user);
+        loginError.textContent = '';
+        // Redirect ke halaman beranda (ganti dengan halaman yang sesuai)
+        window.location.href = '/beranda.html';
+      })
+      .catch((error) => {
+        // Menangani error login
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.error('Login error:', errorCode, errorMessage);
+        loginError.textContent = errorMessage;
+      });
+  });
+}
 
-forgotPasswordFormSubmit.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const email = document.getElementById('forgot-password-email').value;
+// Proses Lupa Kata Sandi
+if (forgotPasswordFormSubmit) {
+  forgotPasswordFormSubmit.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const email = document.getElementById('forgot-password-email').value;
 
-  sendPasswordResetEmail(auth, email)
-    .then(() => {
-      forgotPasswordError.textContent = '';
-      forgotPasswordSuccess.textContent = 'Email reset kata sandi telah dikirim ke alamat email Anda.';
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.error('Forgot password error:', errorCode, errorMessage);
-      forgotPasswordError.textContent = errorMessage;
-      forgotPasswordSuccess.textContent = '';
-    });
-});
+    // Mengirim email reset kata sandi menggunakan Firebase Auth
+    sendPasswordResetEmail(auth, email)
+      .then(() => {
+        forgotPasswordError.textContent = '';
+        forgotPasswordSuccess.textContent = 'Email reset kata sandi telah dikirim ke alamat email Anda.';
+      })
+      .catch((error) => {
+        // Menangani error lupa kata sandi
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.error('Forgot password error:', errorCode, errorMessage);
+        forgotPasswordError.textContent = errorMessage;
+        forgotPasswordSuccess.textContent = '';
+      });
+  });
+}
+
+// Kembali ke Formulir Login dari Formulir Lupa Kata Sandi
+if (showLoginFromForgotPasswordButton) {
+  showLoginFromForgotPasswordButton.addEventListener('click', () => {
+    loginForm.style.display = 'block';
+    registerForm.style.display = 'none';
+    forgotPasswordForm.style.display = 'none';
+  });
+}
