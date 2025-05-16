@@ -1,7 +1,7 @@
 // Import fungsi-fungsi yang diperlukan dari Firebase SDK
 import { initializeApp } from 'firebase/app';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail } from 'firebase/auth';
-import { getFirestore, doc, setDoc } from 'firebase/firestore';
+import { getFirestore, doc, setDoc } from 'firebase/firestore';;
 
 // Konfigurasi Firebase Anda (GANTI DENGAN KREDENSIAL PROYEK ANDA)
 const firebaseConfig = {
