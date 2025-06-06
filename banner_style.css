@@ -1,0 +1,71 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0; /* Warna latar belakang halaman */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    width: 100%;
+    background-color: #333; /* Warna latar belakang header */
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.banner-container {
+    width: 100%; /* Lebar kontainer banner */
+    max-width: 600px; /* Lebar maksimal kontainer banner, bisa disesuaikan */
+    margin: 20px auto; /* Margin atas/bawah 20px, auto untuk tengah horizontal */
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column; /* Banner akan tersusun vertikal */
+    gap: 15px; /* Jarak antar banner */
+    align-items: center; /* Memusatkan banner di tengah kontainer */
+}
+
+.banner {
+    width: 544px; /* Lebar banner sesuai permintaan */
+    height: 192px; /* Tinggi banner sesuai permintaan */
+    overflow: hidden; /* Pastikan gambar tidak keluar dari kotak banner */
+    border-radius: 5px; /* Sedikit lengkungan pada sudut banner */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Sedikit bayangan pada banner */
+}
+
+.banner img {
+    width: 100%; /* Gambar mengisi penuh lebar banner */
+    height: 100%; /* Gambar mengisi penuh tinggi banner */
+    display: block; /* Menghilangkan spasi ekstra di bawah gambar */
+    object-fit: cover; /* Memastikan gambar mengisi area tanpa terdistorsi, mungkin memotong sebagian gambar */
+}
+
+.footer {
+    width: 100%;
+    background-color: #333; /* Warna latar belakang footer */
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Responsivitas untuk layar kecil */
+@media (max-width: 768px) {
+    .banner-container {
+        width: 95%; /* Kontainer lebih lebar di layar kecil */
+        padding: 10px;
+    }
+    .banner {
+        width: 100%; /* Banner mengisi lebar kontainer */
+        height: auto; /* Tinggi menyesuaikan proporsi gambar */
+    }
+    .banner img {
+        height: auto; /* Gambar menyesuaikan tinggi proporsional */
+    }
+}
